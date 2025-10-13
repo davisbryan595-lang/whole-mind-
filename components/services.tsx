@@ -35,8 +35,8 @@ const services = [
       "Addresses nutritional deficiencies impacting emotional balance.",
       "Promotes long-term well-being through food-mind connection.",
     ],
-    image: "https://images.unsplash.com/photo-1478749483989-2f5bb5f3cbfe?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "/service3.jpg",
+    image: "/service3.jpg",
+    imageAlt: "Colorful whole foods arranged for balanced nutrition",
   },
   {
     icon: Heart,
