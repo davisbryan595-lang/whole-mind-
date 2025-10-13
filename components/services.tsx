@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { Brain, Pill, Apple, Heart, Users, Video } from "lucide-react"
 
@@ -57,34 +59,60 @@ export function Services() {
     <section id="services" className="section-cover section-services py-24">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="frosted-panel rounded-3xl px-6 py-8 md:px-10 md:py-12 text-center max-w-4xl mx-auto mb-12">
+        <div className="frosted-panel rounded-3xl px-6 py-8 md:px-10 md:py-12 text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Our Services</h2>
           <p className="text-xl text-muted-foreground text-pretty">
             Evidence-based, holistic, and faith-informed care designed to nurture the mind, body, and spirit.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-          {services.map((service, index) => {
+        {/* Visual Grid (kept minimal) */}
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-20">
+          {services.slice(0, 3).map((service, index) => {
             const Icon = service.icon
             return (
-              <div key={index} className="frosted-panel rounded-2xl p-6 transition-all duration-500">
+              <div
+                key={index}
+                className="frosted-panel rounded-2xl p-6 transition-all duration-500 hover:scale-[1.02]"
+              >
                 <div className="image-tile h-36 mb-5">
                   <Image
                     src={service.image}
                     alt={service.imageAlt}
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-xl"
                     sizes="(min-width:1280px) 320px, (min-width:768px) 38vw, 90vw"
                   />
                   <span className="image-accent" />
                 </div>
-                <div className="bg-primary/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="text-primary" size={28} />
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="bg-primary/10 w-10 h-10 rounded-lg flex items-center justify-center">
+                    <Icon className="text-primary" size={22} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-primary">{service.title}</h3>
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-3">{service.title}</h3>
                 <p className="text-muted-foreground leading-relaxed text-pretty">{service.description}</p>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Timeline List (text-focused) */}
+        <div className="relative border-l border-primary/30 pl-6 space-y-10 max-w-4xl mx-auto">
+          {services.map((service, index) => {
+            const Icon = service.icon
+            return (
+              <div key={index} className="relative group">
+                <div className="absolute -left-3 top-2 w-3 h-3 bg-primary rounded-full transition-all duration-300 group-hover:scale-125" />
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary/10 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-1">
+                    <Icon className="text-primary" size={22} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-primary mb-1">{service.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  </div>
+                </div>
               </div>
             )
           })}
