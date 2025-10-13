@@ -13,7 +13,7 @@ const services = [
       "Integrates psychotherapy, medication, and holistic approaches.",
       "Addresses emotional, physical, and spiritual well-being together.",
     ],
-    image: "https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=crop&w=1200&q=80",
+    image: "url : '/whole.jpg'",
     imageAlt: "Clinician offering supportive counseling in a calming space",
   },
   {
