@@ -28,8 +28,28 @@ export function About() {
               </p>
             </div>
 
+            {/* Mission & Vision Statements */}
+            <div className="pt-8 space-y-6 border-t border-gray-200">
+              <div>
+                <h3 className="text-2xl font-semibold text-primary mb-2">Mission Statement</h3>
+                <p className="text-lg text-foreground/90 leading-relaxed">
+                  To provide compassionate, evidence-based, and integrative behavioral health services that address the
+                  whole person—mind, body, and spirit—empowering individuals to achieve lasting wellness and emotional
+                  balance.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold text-primary mb-2">Vision Statement</h3>
+                <p className="text-lg text-foreground/90 leading-relaxed">
+                  To redefine mental health care by integrating holistic, nutritional, and faith-based approaches that
+                  restore wholeness and promote thriving, purpose-filled lives.
+                </p>
+              </div>
+            </div>
+
             {/* Core Values / Focus Areas */}
-            <div className="grid md:grid-cols-3 gap-6 pt-6">
+            <div className="grid md:grid-cols-3 gap-6 pt-8">
               <div className="text-center p-6 glass-dark rounded-xl">
                 <h3 className="font-bold text-xl text-primary mb-2">Wholeness</h3>
                 <p className="text-sm text-muted-foreground">
