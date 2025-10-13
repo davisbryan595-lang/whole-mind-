@@ -12,7 +12,7 @@ const navLinks = [
   { href: "#providers", label: "Providers" },
   { href: "#testimonials", label: "Testimonials" },
   { href: "#faq", label: "FAQ" },
-  { href: "#referral", label: "#appointment" },
+  { href: "#appointment", label: "Book now" },
   { href: "#contact", label: "Contact" },
 ]
 
