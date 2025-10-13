@@ -168,7 +168,7 @@ export function ReferralForm() {
                     id="service"
                     name="service"
                     required
-                    className="w-full px-3 py-2 border border-input rounded-md bg-black/20 text-white placeholder-gray-300"
+                    className="w-full px-3 py-2 border border-input rounded-md bg-black/20 text-black placeholder-gray-300"
                   >
                     <option value="">Select a Service</option>
                     <option value="therapy">Individual Therapy</option>
