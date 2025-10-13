@@ -9,7 +9,6 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useToast } from "@/hooks/use-toast"
 import { Loader2 } from "lucide-react"
 
@@ -26,7 +25,7 @@ export function ReferralForm() {
     const data = Object.fromEntries(formData)
 
     try {
-      const response = await fetch("/api/referral", {
+      const response = await fetch("/api/appointment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -34,8 +33,8 @@ export function ReferralForm() {
 
       if (response.ok) {
         toast({
-          title: "Referral Submitted",
-          description: "Thank you! We will contact you within 1-2 business days.",
+          title: "Appointment Request Sent",
+          description: "Thank you! We’ll contact you soon to confirm your booking.",
         })
         e.currentTarget.reset()
         setConsent(false)
@@ -45,7 +44,7 @@ export function ReferralForm() {
     } catch (error) {
       toast({
         title: "Submission Error",
-        description: "Please try again or call our office.",
+        description: "Please try again or contact our office directly.",
         variant: "destructive",
       })
     } finally {
@@ -54,12 +53,12 @@ export function ReferralForm() {
   }
 
   return (
-    <section id="referral" className="section-cover section-referral py-24">
+    <section id="appointment" className="section-cover py-24">
       <div className="container mx-auto px-4">
         <div className="frosted-panel rounded-3xl px-6 py-10 md:px-12 text-center max-w-4xl mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Make a Referral</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Book an Appointment</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Start your journey to wholeness today
+            Schedule your session with WholeMind Behavioral Health & Wellness today
           </p>
         </div>
 
@@ -67,8 +66,8 @@ export function ReferralForm() {
           <div className="space-y-4">
             <div className="image-tile h-80">
               <Image
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80"
-                alt="Clinician welcoming a new client to WholeMind"
+                src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1400&q=80"
+                alt="Therapist meeting with a client"
                 fill
                 className="object-cover"
                 sizes="(min-width:1280px) 420px, (min-width:768px) 45vw, 90vw"
@@ -77,8 +76,8 @@ export function ReferralForm() {
             </div>
             <div className="image-tile h-40">
               <Image
-                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80"
-                alt="Healthy lifestyle tools supporting recovery"
+                src="https://images.unsplash.com/photo-1573497019264-1b1b0e1e0a43?auto=format&fit=crop&w=1200&q=80"
+                alt="Calm therapy office"
                 fill
                 className="object-cover"
                 sizes="(min-width:1280px) 320px, (min-width:768px) 40vw, 90vw"
@@ -87,290 +86,138 @@ export function ReferralForm() {
             </div>
           </div>
 
-          {/* Updated Card with frosted and readable text */}
           <Card className="frosted-panel border-border/50 bg-black/40 backdrop-blur-md">
             <CardHeader>
-              <CardTitle className="text-2xl text-white">Referral Form</CardTitle>
+              <CardTitle className="text-2xl text-white">Appointment Form</CardTitle>
               <CardDescription className="text-gray-200">
-                Complete this form to refer yourself or a patient to our practice
+                Fill out the form below to request your preferred appointment time.
               </CardDescription>
             </CardHeader>
 
             <CardContent>
-              <div className="text-white"> {/* Ensures all text inside is readable */}
-                <Tabs defaultValue="patient" className="w-full">
-                  <TabsList className="grid w-full grid-cols-2 mb-8">
-                    <TabsTrigger value="patient">Patient Self-Referral</TabsTrigger>
-                    <TabsTrigger value="provider">Provider Referral</TabsTrigger>
-                  </TabsList>
+              <form onSubmit={handleSubmit} className="space-y-6 text-white">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName">First Name *</Label>
+                    <Input
+                      id="firstName"
+                      name="firstName"
+                      required
+                      className="text-white placeholder-gray-300 bg-black/20"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName">Last Name *</Label>
+                    <Input
+                      id="lastName"
+                      name="lastName"
+                      required
+                      className="text-white placeholder-gray-300 bg-black/20"
+                    />
+                  </div>
+                </div>
 
-                  {/* Patient Self-Referral Tab */}
-                  <TabsContent value="patient">
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <input type="hidden" name="referralType" value="patient" />
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="firstName">First Name *</Label>
-                          <Input
-                            id="firstName"
-                            name="firstName"
-                            required
-                            className="text-white placeholder-gray-300 bg-black/20"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="lastName">Last Name *</Label>
-                          <Input
-                            id="lastName"
-                            name="lastName"
-                            required
-                            className="text-white placeholder-gray-300 bg-black/20"
-                          />
-                        </div>
-                      </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email *</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    className="text-white placeholder-gray-300 bg-black/20"
+                  />
+                </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email *</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          className="text-white placeholder-gray-300 bg-black/20"
-                        />
-                      </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Phone Number *</Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    required
+                    className="text-white placeholder-gray-300 bg-black/20"
+                  />
+                </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number *</Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          required
-                          className="text-white placeholder-gray-300 bg-black/20"
-                        />
-                      </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="date">Preferred Date *</Label>
+                    <Input
+                      id="date"
+                      name="date"
+                      type="date"
+                      required
+                      className="text-white placeholder-gray-300 bg-black/20"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="time">Preferred Time *</Label>
+                    <Input
+                      id="time"
+                      name="time"
+                      type="time"
+                      required
+                      className="text-white placeholder-gray-300 bg-black/20"
+                    />
+                  </div>
+                </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="dob">Date of Birth *</Label>
-                        <Input
-                          id="dob"
-                          name="dob"
-                          type="date"
-                          required
-                          className="text-white placeholder-gray-300 bg-black/20"
-                        />
-                      </div>
+                <div className="space-y-2">
+                  <Label htmlFor="service">Service Type *</Label>
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    className="w-full px-3 py-2 border border-input rounded-md bg-black/20 text-white placeholder-gray-300"
+                  >
+                    <option value="">Select a Service</option>
+                    <option value="therapy">Individual Therapy</option>
+                    <option value="couples">Couples Counseling</option>
+                    <option value="family">Family Therapy</option>
+                    <option value="assessment">Psychological Assessment</option>
+                  </select>
+                </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="insurance">Insurance Provider</Label>
-                        <Input
-                          id="insurance"
-                          name="insurance"
-                          className="text-white placeholder-gray-300 bg-black/20"
-                        />
-                      </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message">Additional Notes</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    placeholder="Share anything you'd like us to know before your appointment..."
+                    className="text-white placeholder-gray-300 bg-black/20"
+                  />
+                </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="reason">Reason for Referral *</Label>
-                        <Textarea
-                          id="reason"
-                          name="reason"
-                          rows={4}
-                          placeholder="Please describe your concerns and what you're hoping to address..."
-                          required
-                          className="text-white placeholder-gray-300 bg-black/20"
-                        />
-                      </div>
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="consent"
+                    checked={consent}
+                    onCheckedChange={(checked) => setConsent(checked as boolean)}
+                    required
+                  />
+                  <Label htmlFor="consent" className="text-sm leading-relaxed cursor-pointer">
+                    I consent to WholeMind Behavioral Health & Wellness contacting me regarding this appointment
+                    request and understand that my information will be kept confidential in accordance with HIPAA
+                    regulations.
+                  </Label>
+                </div>
 
-                      <div className="flex items-start gap-3">
-                        <Checkbox
-                          id="consent"
-                          checked={consent}
-                          onCheckedChange={(checked) => setConsent(checked as boolean)}
-                          required
-                        />
-                        <Label htmlFor="consent" className="text-sm leading-relaxed cursor-pointer">
-                          I consent to WholeMind Behavioral Health & Wellness contacting me regarding this referral
-                          and understand that my information will be kept confidential in accordance with HIPAA
-                          regulations.
-                        </Label>
-                      </div>
-
-                      <Button
-                        type="submit"
-                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                        disabled={isSubmitting || !consent}
-                      >
-                        {isSubmitting ? (
-                          <>
-                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                            Submitting...
-                          </>
-                        ) : (
-                          "Submit Referral"
-                        )}
-                      </Button>
-                    </form>
-                  </TabsContent>
-
-                  {/* Provider Referral Tab */}
-                  <TabsContent value="provider">
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <input type="hidden" name="referralType" value="provider" />
-                      <div className="space-y-4 mb-6 p-4 bg-black/20 rounded-lg">
-                        <h3 className="font-semibold text-white">Provider Information</h3>
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="providerName">Provider Name *</Label>
-                            <Input
-                              id="providerName"
-                              name="providerName"
-                              required
-                              className="text-white placeholder-gray-300 bg-black/20"
-                            />
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="providerPhone">Provider Phone *</Label>
-                            <Input
-                              id="providerPhone"
-                              name="providerPhone"
-                              type="tel"
-                              required
-                              className="text-white placeholder-gray-300 bg-black/20"
-                            />
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="providerEmail">Provider Email *</Label>
-                          <Input
-                            id="providerEmail"
-                            name="providerEmail"
-                            type="email"
-                            required
-                            className="text-white placeholder-gray-300 bg-black/20"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="practice">Practice/Organization</Label>
-                          <Input
-                            id="practice"
-                            name="practice"
-                            className="text-white placeholder-gray-300 bg-black/20"
-                          />
-                        </div>
-                      </div>
-
-                      <h3 className="font-semibold text-white">Patient Information</h3>
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="patientFirstName">Patient First Name *</Label>
-                          <Input
-                            id="patientFirstName"
-                            name="patientFirstName"
-                            required
-                            className="text-white placeholder-gray-300 bg-black/20"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="patientLastName">Patient Last Name *</Label>
-                          <Input
-                            id="patientLastName"
-                            name="patientLastName"
-                            required
-                            className="text-white placeholder-gray-300 bg-black/20"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="patientEmail">Patient Email</Label>
-                        <Input
-                          id="patientEmail"
-                          name="patientEmail"
-                          type="email"
-                          className="text-white placeholder-gray-300 bg-black/20"
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="patientPhone">Patient Phone *</Label>
-                        <Input
-                          id="patientPhone"
-                          name="patientPhone"
-                          type="tel"
-                          required
-                          className="text-white placeholder-gray-300 bg-black/20"
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="patientDob">Patient Date of Birth *</Label>
-                        <Input
-                          id="patientDob"
-                          name="patientDob"
-                          type="date"
-                          required
-                          className="text-white placeholder-gray-300 bg-black/20"
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="diagnosis">Diagnosis/Presenting Concerns *</Label>
-                        <Textarea
-                          id="diagnosis"
-                          name="diagnosis"
-                          rows={4}
-                          placeholder="Please provide relevant diagnoses and clinical information..."
-                          required
-                          className="text-white placeholder-gray-300 bg-black/20"
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="urgency">Urgency Level</Label>
-                        <select
-                          id="urgency"
-                          name="urgency"
-                          className="w-full px-3 py-2 border border-input rounded-md bg-black/20 text-white placeholder-gray-300"
-                        >
-                          <option value="routine">Routine</option>
-                          <option value="urgent">Urgent (within 1 week)</option>
-                          <option value="emergency">Emergency (immediate attention)</option>
-                        </select>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <Checkbox
-                          id="providerConsent"
-                          checked={consent}
-                          onCheckedChange={(checked) => setConsent(checked as boolean)}
-                          required
-                        />
-                        <Label htmlFor="providerConsent" className="text-sm leading-relaxed cursor-pointer">
-                          I confirm that I have obtained appropriate consent from the patient to make this referral and
-                          share their information with WholeMind Behavioral Health & Wellness.
-                        </Label>
-                      </div>
-
-                      <Button
-                        type="submit"
-                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                        disabled={isSubmitting || !consent}
-                      >
-                        {isSubmitting ? (
-                          <>
-                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                            Submitting...
-                          </>
-                        ) : (
-                          "Submit Referral"
-                        )}
-                      </Button>
-                    </form>
-                  </TabsContent>
-                </Tabs>
-              </div>
+                <Button
+                  type="submit"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                  disabled={isSubmitting || !consent}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    "Book Appointment"
+                  )}
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </div>
