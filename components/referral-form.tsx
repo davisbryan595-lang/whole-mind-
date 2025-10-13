@@ -25,7 +25,7 @@ export function ReferralForm() {
     const data = Object.fromEntries(formData)
 
     try {
-      const response = await fetch("/api/appointment", {
+      const response = await fetch("/api/referral", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -33,7 +33,7 @@ export function ReferralForm() {
 
       if (response.ok) {
         toast({
-          title: "Appointment Request Sent",
+          title: "Appointment Request Submitted",
           description: "Thank you! We’ll contact you soon to confirm your booking.",
         })
         e.currentTarget.reset()
@@ -53,12 +53,12 @@ export function ReferralForm() {
   }
 
   return (
-    <section id="appointment" className="section-cover py-24">
+    <section id="appointment" className="section-cover section-referral py-24">
       <div className="container mx-auto px-4">
         <div className="frosted-panel rounded-3xl px-6 py-10 md:px-12 text-center max-w-4xl mx-auto mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Book an Appointment</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Schedule your session with WholeMind Behavioral Health & Wellness today
+            Start your journey to wellness — schedule your session today
           </p>
         </div>
 
@@ -90,7 +90,7 @@ export function ReferralForm() {
             <CardHeader>
               <CardTitle className="text-2xl text-white">Appointment Form</CardTitle>
               <CardDescription className="text-gray-200">
-                Fill out the form below to request your preferred appointment time.
+                Fill out the form below to request your appointment.
               </CardDescription>
             </CardHeader>
 
@@ -179,10 +179,10 @@ export function ReferralForm() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Additional Notes</Label>
+                  <Label htmlFor="notes">Additional Notes</Label>
                   <Textarea
-                    id="message"
-                    name="message"
+                    id="notes"
+                    name="notes"
                     rows={4}
                     placeholder="Share anything you'd like us to know before your appointment..."
                     className="text-white placeholder-gray-300 bg-black/20"
