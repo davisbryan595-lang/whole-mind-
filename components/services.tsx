@@ -1,60 +1,81 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
-import { Brain, Pill, Apple, Heart, Users, Video } from "lucide-react"
+import { Brain, Pill, Apple, Heart, Users, Video, ChevronDown, ChevronUp } from "lucide-react"
 
 const services = [
   {
     icon: Brain,
     title: "Holistic & Integrative Psychiatry",
-    description:
-      "Comprehensive psychiatric care that integrates evidence-based medicine with holistic approaches to address mind, body, and spirit.",
+    description: [
+      "Comprehensive psychiatric evaluation and personalized treatment plans.",
+      "Integrates psychotherapy, medication, and holistic approaches.",
+      "Addresses emotional, physical, and spiritual well-being together.",
+    ],
     image: "https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Clinician offering supportive counseling in a calming space",
   },
   {
     icon: Pill,
     title: "Medication Management",
-    description:
-      "Individualized psychiatric evaluation and ongoing medication support, guided by evidence-based practices and compassionate care.",
+    description: [
+      "Thorough evaluation for appropriate psychiatric medication use.",
+      "Regular follow-ups to ensure safety and effectiveness.",
+      "Collaborative care with your primary or specialty providers.",
+    ],
     image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Pharmacist preparing personalized medication plan",
   },
   {
     icon: Apple,
     title: "Nutritional Psychiatry",
-    description:
-      "Integrating nutrition and mental health science to optimize brain health, emotional balance, and overall wellness.",
+    description: [
+      "Evidence-based nutrition guidance for brain and mood health.",
+      "Addresses nutritional deficiencies impacting emotional balance.",
+      "Promotes long-term well-being through food-mind connection.",
+    ],
     image: "https://images.unsplash.com/photo-1478749483989-2f5bb5f3cbfe?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Colorful whole foods arranged for balanced nutrition",
   },
   {
     icon: Heart,
     title: "Faith-Based Counseling",
-    description:
-      "Therapeutic support that honors your spiritual beliefs while providing compassionate, evidence-based care.",
+    description: [
+      "Therapeutic approach honoring your faith and spiritual identity.",
+      "Blends clinical care with your personal values and beliefs.",
+      "Provides space for healing rooted in compassion and purpose.",
+    ],
     image: "https://images.unsplash.com/photo-1494809610410-160faaed4de0?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Hands joined in reflection during faith-based therapy",
   },
   {
     icon: Users,
     title: "Mindfulness & Stress Reduction",
-    description:
-      "Practical techniques to cultivate awareness, manage stress, and promote emotional resilience in daily life.",
+    description: [
+      "Guided mindfulness practices to manage anxiety and stress.",
+      "Focus on grounding, awareness, and resilience-building.",
+      "Customized tools to enhance emotional regulation.",
+    ],
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Therapist guiding a group mindfulness session",
   },
   {
     icon: Video,
     title: "Lifestyle & Wellness Coaching",
-    description:
-      "Personalized guidance to optimize daily routines, sleep, nutrition, and overall mental and physical well-being.",
+    description: [
+      "Personalized guidance to improve sleep, nutrition, and routines.",
+      "Support for sustainable habits improving mental clarity.",
+      "Empowerment through lifestyle-based holistic wellness.",
+    ],
     image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Provider offering virtual lifestyle coaching",
   },
 ]
 
 export function Services() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
   return (
     <section id="services" className="section-cover section-services py-24">
       <div className="container mx-auto px-4">
@@ -66,44 +87,69 @@ export function Services() {
           </p>
         </div>
 
-        {/* Services List (Timeline Style) */}
-        <div className="frosted-panel rounded-3xl px-8 md:px-12 py-12 max-w-5xl mx-auto shadow-xl">
-          <div className="relative border-l border-primary/20 pl-8 space-y-10">
-            {services.map((service, index) => {
-              const Icon = service.icon
-              return (
-                <div key={index} className="relative group">
-                  <div className="absolute -left-[22px] top-3 w-4 h-4 bg-primary/90 rounded-full shadow-md group-hover:scale-110 transition-transform" />
-                  <div className="flex flex-col md:flex-row md:items-center gap-6">
-                    {/* Icon + Title + Desc */}
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center">
-                          <Icon className="text-primary" size={26} />
-                        </div>
-                        <h3 className="text-2xl font-semibold text-primary">
-                          {service.title}
-                        </h3>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed text-base">
-                        {service.description}
-                      </p>
-                    </div>
+        {/* Services Grid */}
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          {services.map((service, index) => {
+            const Icon = service.icon
+            const isOpen = openIndex === index
 
-                    {/* Small Image on the right (like appointment section visuals) */}
-                    <div className="relative w-full md:w-48 h-32 rounded-2xl overflow-hidden shadow-md">
-                      <Image
-                        src={service.image}
-                        alt={service.imageAlt}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                  </div>
+            return (
+              <div
+                key={index}
+                className={`group relative flex flex-col items-center text-center p-6 rounded-3xl shadow-lg bg-white/70 backdrop-blur-md border border-white/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2`}
+              >
+                {/* Service Image */}
+                <div className="relative w-full h-40 rounded-2xl overflow-hidden mb-4">
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-              )
-            })}
-          </div>
+
+                {/* Icon + Title */}
+                <div className="flex items-center justify-center gap-3 mb-2">
+                  <div className="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center">
+                    <Icon className="text-primary" size={26} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-primary">{service.title}</h3>
+                </div>
+
+                {/* Dropdown Toggle */}
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="mt-3 flex items-center gap-2 text-sm font-medium text-primary/80 hover:text-primary transition"
+                >
+                  {isOpen ? (
+                    <>
+                      <ChevronUp className="w-4 h-4" /> Hide Details
+                    </>
+                  ) : (
+                    <>
+                      <ChevronDown className="w-4 h-4" /> View Details
+                    </>
+                  )}
+                </button>
+
+                {/* Expandable Description */}
+                <div
+                  className={`transition-all duration-500 overflow-hidden ${
+                    isOpen ? "max-h-60 mt-4 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <ul className="text-left text-muted-foreground text-sm space-y-2 px-2">
+                    {service.description.map((point, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-primary mt-1.5">•</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
