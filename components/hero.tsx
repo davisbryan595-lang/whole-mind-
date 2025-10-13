@@ -6,7 +6,7 @@ import { ArrowDown } from "lucide-react"
 
 export function Hero() {
   const scrollToReferral = () => {
-    const element = document.querySelector("#referral")
+    const element = document.querySelector("#appointment")
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
@@ -44,7 +44,7 @@ export function Hero() {
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
                 <Button size="lg" onClick={scrollToReferral} className="px-8 py-6 text-lg text-white bg-white">
-                  Make a Referral
+                  Make an Appointment
                 </Button>
                 <Button
                   size="lg"
