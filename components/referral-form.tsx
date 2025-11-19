@@ -9,48 +9,9 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { useToast } from "@/hooks/use-toast"
-import { Loader2 } from "lucide-react"
 
 export function ReferralForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
   const [consent, setConsent] = useState(false)
-  const { toast } = useToast()
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    const formData = new FormData(e.currentTarget)
-    const data = Object.fromEntries(formData)
-
-    try {
-      const response = await fetch("/api/referral", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
-
-      if (response.ok) {
-        toast({
-          title: "Appointment Request Submitted",
-          description: "Thank you! We’ll contact you soon to confirm your booking.",
-        })
-        e.currentTarget.reset()
-        setConsent(false)
-      } else {
-        throw new Error("Submission failed")
-      }
-    } catch (error) {
-      toast({
-        title: "Submission Error",
-        description: "Please try again or contact our office directly.",
-        variant: "destructive",
-      })
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   return (
     <section id="appointment" className="section-cover section-referral py-24">
@@ -95,7 +56,19 @@ export function ReferralForm() {
             </CardHeader>
 
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6 text-white">
+              {/* FORM SUBMITS DIRECTLY TO estellayem@gmail.com */}
+              <form
+                action="https://formsubmit.co/estellayem@gmail.com"
+                method="POST"
+                className="space-y-6 text-white"
+              >
+                {/* FormSubmit Hidden Configs */}
+                <input type="hidden" name="_subject" value="New Appointment Request - WholeMind" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_autoresponse" value="Thank you for your appointment request! We’ve received it and will contact you within 24 hours to confirm your session." />
+                <input type="hidden" name="_next" value={`${typeof window !== "undefined" ? window.location.origin : ""}/thank-you`} />
+
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name *</Label>
@@ -168,7 +141,7 @@ export function ReferralForm() {
                     id="service"
                     name="service"
                     required
-                    className="w-full px-3 py-2 border border-input rounded-md bg-black/20 text-black placeholder-gray-300"
+                    className="w-full px-3 py-2 border border-input rounded-md bg-black/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
                   >
                     <option value="">Select a Service</option>
                     <option value="therapy">Individual Therapy</option>
@@ -205,17 +178,10 @@ export function ReferralForm() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                  disabled={isSubmitting || !consent}
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition"
+                  disabled={!consent}
                 >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Submitting...
-                    </>
-                  ) : (
-                    "Book Appointment"
-                  )}
+                  Book Appointment
                 </Button>
               </form>
             </CardContent>
