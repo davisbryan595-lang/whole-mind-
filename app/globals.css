@@ -291,7 +291,7 @@
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
-    background: radial-gradient(circle at 15% 15%, rgba(254, 250, 239, 0.32), transparent 65%);
+    background: radial-gradient(circle at 15% 15%, rgba(254, 250, 239, 0.35), transparent 65%);
   }
 
   /* Hero section - Keep background image */
