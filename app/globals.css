@@ -154,6 +154,48 @@
     }
   }
 
+  @keyframes rotateIn3D {
+    from {
+      opacity: 0;
+      transform: rotateY(-75deg) rotateX(45deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotateY(0) rotateX(0);
+    }
+  }
+
+  @keyframes fadeUpSlide {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reveal {
+    perspective: 1000px;
+  }
+
+  .reveal-rotate-3d {
+    perspective: 1000px;
+  }
+
+  .reveal-rotate-3d.reveal-visible {
+    animation: rotateIn3D 0.8s ease-out forwards;
+  }
+
+  .reveal-fade-up {
+    perspective: 1000px;
+  }
+
+  .reveal-fade-up.reveal-visible {
+    animation: fadeUpSlide 0.6s ease-out forwards;
+  }
+
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
@@ -232,14 +274,10 @@
   }
 
   .section-home {
-    background-image: url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=2000&q=80");
-    --section-overlay: linear-gradient(125deg, rgba(29, 76, 68, 0.78), rgba(29, 76, 68, 0.45));
+    background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80");
+    --section-overlay: rgba(0, 0, 0, 0.25);
   }
 
-  .section-about {
-    background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80");
-    --section-overlay: linear-gradient(140deg, rgba(17, 44, 39, 0.72), rgba(17, 44, 39, 0.3));
-  }
 
   .section-services {
     background-image: url("https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=2000&q=80");
@@ -388,6 +426,131 @@
     transform: translateY(-6px);
     box-shadow: 0 28px 60px rgba(17, 44, 39, 0.25);
     border-color: rgba(29, 76, 68, 0.35);
+  }
+
+  /* Hero section custom styles */
+  .hero-tagline {
+    color: #D4AF37;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: ui-serif, Georgia, serif;
+  }
+
+  .hero-heading {
+    font-family: ui-serif, Georgia, serif;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  @media (min-width: 768px) {
+    .hero-heading {
+      font-size: 4.5rem;
+    }
+  }
+
+  .hero-subheading {
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+  }
+
+  @media (min-width: 768px) {
+    .hero-subheading {
+      font-size: 1.5rem;
+    }
+  }
+
+  .hero-btn-primary {
+    background-color: #6B8E96;
+    color: #FFFFFF;
+    border-radius: 9999px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hero-btn-primary:hover {
+    background-color: #7a9ba5;
+    box-shadow: 0 4px 12px rgba(107, 142, 150, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .hero-btn-secondary {
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    border-radius: 9999px;
+    padding: 0.65rem 1.75rem;
+    font-weight: 600;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .hero-btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #D4AF37;
+  }
+
+  /* About section custom styles */
+  .about-tagline {
+    color: #D4AF37;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: ui-serif, Georgia, serif;
+  }
+
+  .about-heading {
+    font-family: ui-serif, Georgia, serif;
+    color: var(--foreground);
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    .about-heading {
+      font-size: 3.5rem;
+    }
+  }
+
+  .about-intro {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--foreground);
+    font-weight: 400;
+  }
+
+  .about-section-heading {
+    font-family: ui-serif, Georgia, serif;
+    color: #D4AF37;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .about-body {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--foreground);
+    font-weight: 400;
+  }
+
+  .about-value-heading {
+    font-family: ui-serif, Georgia, serif;
+    color: var(--foreground);
+    font-size: 1.25rem;
+    font-weight: 600;
   }
 
   /* Reduce motion for accessibility */

@@ -6,9 +6,10 @@ interface ScrollRevealProps {
   children: ReactNode
   className?: string
   delay?: number
+  type?: "fade-up" | "rotate-3d"
 }
 
-export function ScrollReveal({ children, className = "", delay = 0 }: ScrollRevealProps) {
+export function ScrollReveal({ children, className = "", delay = 0, type = "fade-up" }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -19,6 +20,9 @@ export function ScrollReveal({ children, className = "", delay = 0 }: ScrollReve
             setTimeout(() => {
               entry.target.classList.add("reveal-visible")
             }, delay)
+          } else {
+            // Reset animation when leaving viewport so it can replay
+            entry.target.classList.remove("reveal-visible")
           }
         })
       },
@@ -33,7 +37,7 @@ export function ScrollReveal({ children, className = "", delay = 0 }: ScrollReve
   }, [delay])
 
   return (
-    <div ref={ref} className={`reveal ${className}`}>
+    <div ref={ref} className={`reveal reveal-${type} ${className}`}>
       {children}
     </div>
   )
