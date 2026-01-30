@@ -292,35 +292,60 @@
     background: radial-gradient(circle at 15% 15%, rgba(254, 250, 239, 0.32), transparent 65%);
   }
 
+  /* Hero section - Keep background image */
   .section-home {
     background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80");
     --section-overlay: rgba(0, 0, 0, 0.25);
   }
 
-
+  /* Services Section - White background */
   .section-services {
-    background-image: url("https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=2000&q=80");
-    --section-overlay: linear-gradient(145deg, rgba(34, 86, 74, 0.65), rgba(34, 86, 74, 0.28));
+    background: #ffffff;
+    --section-overlay: transparent;
   }
 
+  .section-services::before {
+    display: none;
+  }
+
+  /* Providers Section - Luxury gradient background */
   .section-providers {
-    background-image: url("https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=2000&q=80");
-    --section-overlay: linear-gradient(140deg, rgba(22, 56, 49, 0.75), rgba(22, 56, 49, 0.35));
+    background: linear-gradient(135deg, #f5f1e8 0%, #e8dfd0 50%, #f0ece3 100%);
+    --section-overlay: transparent;
   }
 
+  .section-providers::before {
+    display: none;
+  }
+
+  /* Testimonials Section - White background */
   .section-testimonials {
-    background-image: url("https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=2000&q=80");
-    --section-overlay: linear-gradient(135deg, rgba(20, 60, 50, 0.75), rgba(20, 60, 50, 0.35));
+    background: #ffffff;
+    --section-overlay: transparent;
   }
 
+  .section-testimonials::before {
+    display: none;
+  }
+
+  /* FAQ Section - Luxury gradient background */
   .section-faq {
-    background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2000&q=80");
-    --section-overlay: linear-gradient(135deg, rgba(25, 68, 58, 0.75), rgba(25, 68, 58, 0.32));
+    background: linear-gradient(135deg, #f5f1e8 0%, #e8dfd0 50%, #f0ece3 100%);
+    --section-overlay: transparent;
   }
 
+  .section-faq::before {
+    display: none;
+  }
+
+  /* Referral/Appointment Section - White background */
   .section-referral {
-    background-image: url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2000&q=80");
-    --section-overlay: linear-gradient(140deg, rgba(25, 68, 58, 0.78), rgba(25, 68, 58, 0.38));
+    background: #ffffff;
+    --section-overlay: transparent;
+  }
+
+  .section-referral::before {
+    display: none;
   }
 
   .liquid-hover {
