@@ -42,11 +42,15 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="section-cover section-testimonials py-24">
       <div className="container mx-auto px-4">
-        <div className="frosted-panel rounded-3xl px-6 py-10 md:px-12 text-center max-w-4xl mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">What Our Clients Say</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Real stories of healing and transformation
-          </p>
+        <div className="mb-12 max-w-4xl mx-auto">
+          <ScrollReveal type="fade-up" delay={0}>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-center">What Our Clients Say</h2>
+          </ScrollReveal>
+          <ScrollReveal type="fade-up" delay={100}>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty text-center">
+              Real stories of healing and transformation
+            </p>
+          </ScrollReveal>
         </div>
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] items-center max-w-6xl mx-auto">
           <div className="grid gap-4">
