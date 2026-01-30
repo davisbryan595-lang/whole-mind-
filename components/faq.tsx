@@ -60,7 +60,7 @@ export function FAQ() {
     <section id="faq" className="section-cover section-faq py-24">
       <div className="container mx-auto px-4">
         <div className="mb-12 max-w-4xl mx-auto">
-          <ScrollReveal type="fade-up" delay={0}>
+          <ScrollReveal type="slide-fade-left" delay={0}>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-center">Frequently Asked Questions</h2>
           </ScrollReveal>
           <ScrollReveal type="fade-up" delay={100}>
