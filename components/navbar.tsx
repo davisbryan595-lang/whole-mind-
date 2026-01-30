@@ -51,16 +51,23 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isBookNow = link.label === "Book now"
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={
+                    isBookNow
+                      ? "text-sm font-semibold px-6 py-2 rounded-full bg-gradient-to-r from-teal-600 to-teal-500 text-white hover:from-teal-700 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                      : "text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  }
+                >
+                  {link.label}
+                </a>
+              )
+            })}
           </div>
 
           {/* Mobile Menu Toggle */}
