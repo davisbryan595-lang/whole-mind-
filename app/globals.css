@@ -23,7 +23,7 @@
   --secondary: #d9ebe5;
   --secondary-foreground: #1d4c44;
   --muted: #eef4f1;
-  --muted-foreground: #7a9a91;
+  --muted-foreground: #507067;
   --accent: #39a78e;
   --accent-foreground: #fefaef;
   --destructive: oklch(0.577 0.245 27.325);
@@ -33,7 +33,7 @@
   --ring: #39a78e;
   --chart-1: #39a78e;
   --chart-2: #1d4c44;
-  --chart-3: #7a9a91;
+  --chart-3: #507067;
   --chart-4: #b5c8c1;
   --chart-5: #d9ebe5;
   --radius: 0.625rem;
@@ -59,7 +59,7 @@
   --secondary: #5a8a7f;
   --secondary-foreground: #fefaef;
   --muted: #4a7a6f;
-  --muted-foreground: #b5c8c1;
+  --muted-foreground: #d9ebe5;
   --accent: #7ac9b5;
   --accent-foreground: #1d4c44;
   --destructive: oklch(0.396 0.141 25.723);
@@ -69,7 +69,7 @@
   --ring: #39a78e;
   --chart-1: #39a78e;
   --chart-2: #7ac9b5;
-  --chart-3: #b5c8c1;
+  --chart-3: #d9ebe5;
   --chart-4: #5a8a7f;
   --chart-5: #4a7a6f;
   --sidebar: #1d4c44;
@@ -583,7 +583,7 @@
 
   /* About section custom styles */
   .about-tagline {
-    color: #D4AF37;
+    color: #8C701A;
     font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -614,7 +614,7 @@
 
   .about-section-heading {
     font-family: ui-serif, Georgia, serif;
-    color: #D4AF37;
+    color: #8C701A;
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.3;
