@@ -81,11 +81,15 @@ export function Services() {
     <section id="services" className="section-cover section-services py-24">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="frosted-panel rounded-3xl px-6 py-10 md:px-12 text-center max-w-4xl mx-auto mb-16 shadow-xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Our Services</h2>
-          <p className="text-xl text-muted-foreground text-pretty">
-            Evidence-based, holistic, and faith-informed care designed to nurture the mind, body, and spirit.
-          </p>
+        <div className="mb-16 max-w-4xl mx-auto">
+          <ScrollReveal type="fade-up" delay={0}>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-center">Our Services</h2>
+          </ScrollReveal>
+          <ScrollReveal type="fade-up" delay={100}>
+            <p className="text-xl text-muted-foreground text-pretty text-center">
+              Evidence-based, holistic, and faith-informed care designed to nurture the mind, body, and spirit.
+            </p>
+          </ScrollReveal>
         </div>
 
         {/* Services Grid */}
