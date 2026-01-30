@@ -7,10 +7,10 @@ export function About() {
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
         {/* Header Section */}
         <div className="mb-24 lg:mb-32 max-w-4xl">
-          <ScrollReveal type="fade-up" delay={0}>
+          <ScrollReveal type="slide-fade-left" delay={0}>
             <p className="about-tagline mb-6">Our Practice</p>
           </ScrollReveal>
-          <ScrollReveal type="fade-up" delay={100}>
+          <ScrollReveal type="slide-fade-left" delay={100}>
             <h2 className="about-heading mb-8">
               Compassionate Care
               <br />
