@@ -454,12 +454,12 @@
   }
 
   .liquid-card::before {
-    background: rgba(254, 250, 239, 0.35);
+    background: rgba(254, 250, 239, 0.4);
     z-index: -2;
   }
 
   .liquid-card::after {
-    background: linear-gradient(180deg, rgba(181, 200, 193, 0.18) 0%, rgba(29, 76, 68, 0.4) 100%);
+    background: linear-gradient(180deg, rgba(217, 235, 229, 0.25) 0%, rgba(57, 167, 142, 0.35) 100%);
     transform: translateY(105%);
     z-index: -1;
   }
@@ -470,8 +470,8 @@
 
   .liquid-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 28px 60px rgba(17, 44, 39, 0.25);
-    border-color: rgba(29, 76, 68, 0.35);
+    box-shadow: 0 28px 60px rgba(29, 76, 68, 0.22);
+    border-color: rgba(57, 167, 142, 0.3);
   }
 
   /* Hero section custom styles */
