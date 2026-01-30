@@ -330,7 +330,7 @@
     display: none;
   }
 
-  /* FAQ Section - Sage gradient background */
+  /* FAQ Section - Sage gradient background (top part) */
   .section-faq {
     background: linear-gradient(135deg, #fefaef 0%, #d9ebe5 20%, #39a78e 45%, #1d5f52 65%, #d9ebe5 85%, #fefaef 100%);
     --section-overlay: transparent;
@@ -340,7 +340,7 @@
     display: none;
   }
 
-  /* Referral/Appointment Section - Sage gradient background */
+  /* Referral/Appointment Section - Continuing gradient background */
   .section-referral {
     background: linear-gradient(135deg, #fefaef 0%, #d9ebe5 20%, #39a78e 45%, #1d5f52 65%, #d9ebe5 85%, #fefaef 100%);
     --section-overlay: transparent;
