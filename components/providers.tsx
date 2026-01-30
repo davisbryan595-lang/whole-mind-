@@ -33,7 +33,7 @@ export function Providers() {
     <section id="providers" className="section-cover section-providers py-24">
       <div className="container mx-auto px-4">
         <div className="mb-12 max-w-4xl mx-auto">
-          <ScrollReveal type="fade-up" delay={0}>
+          <ScrollReveal type="slide-fade-left" delay={0}>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-center">Our Founder</h2>
           </ScrollReveal>
           <ScrollReveal type="fade-up" delay={100}>
