@@ -30,26 +30,30 @@ export function ReferralForm() {
 
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] items-start max-w-6xl mx-auto">
           <div className="space-y-4">
-            <div className="image-tile h-80">
-              <Image
-                src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1400&q=80"
-                alt="Therapist meeting with a client"
-                fill
-                className="object-cover"
-                sizes="(min-width:1280px) 420px, (min-width:768px) 45vw, 90vw"
-              />
-              <span className="image-accent" />
-            </div>
-            <div className="image-tile h-40">
-              <Image
-                src="https://images.unsplash.com/photo-1573497019264-1b1b0e1e0a43?auto=format&fit=crop&w=1200&q=80"
-                alt="Calm therapy office"
-                fill
-                className="object-cover"
-                sizes="(min-width:1280px) 320px, (min-width:768px) 40vw, 90vw"
-              />
-              <span className="image-accent" />
-            </div>
+            <ScrollReveal type="rotate-3d" delay={50}>
+              <div className="image-tile h-80">
+                <Image
+                  src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1400&q=80"
+                  alt="Therapist meeting with a client"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width:1280px) 420px, (min-width:768px) 45vw, 90vw"
+                />
+                <span className="image-accent" />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal type="rotate-3d" delay={100}>
+              <div className="image-tile h-40">
+                <Image
+                  src="https://images.unsplash.com/photo-1573497019264-1b1b0e1e0a43?auto=format&fit=crop&w=1200&q=80"
+                  alt="Calm therapy office"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width:1280px) 320px, (min-width:768px) 40vw, 90vw"
+                />
+                <span className="image-accent" />
+              </div>
+            </ScrollReveal>
           </div>
 
           <Card className="frosted-panel border-border/50 bg-black/40 backdrop-blur-md">
