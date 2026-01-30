@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 const faqs = [
   {
