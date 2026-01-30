@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 const testimonials = [
   {
