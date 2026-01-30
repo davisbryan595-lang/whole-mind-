@@ -93,7 +93,7 @@ export function Navbar() {
                     onClick={(e) => handleNavClick(e, link.href)}
                     className={
                       isBookNow
-                        ? "text-sm font-semibold px-6 py-2 rounded-full bg-gradient-to-r from-teal-600 to-teal-500 text-white hover:from-teal-700 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-xl text-center"
+                        ? "text-sm font-semibold px-6 py-2 rounded-full text-white text-center transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 book-now-btn"
                         : "text-sm font-medium text-foreground hover:text-primary transition-colors"
                     }
                   >
