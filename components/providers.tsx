@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Heart, GraduationCap, Award } from "lucide-react"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 const providers = [
   {
