@@ -475,16 +475,28 @@
   }
 
   /* Footer with lighter sage gradient */
-  footer {
+  footer[id="contact"] {
     background: linear-gradient(135deg, #e8f5f1 0%, #d9ebe5 25%, #b5c8c1 50%, #d9ebe5 75%, #e8f5f1 100%) !important;
-    color: #1d4c44;
+    color: #1d4c44 !important;
   }
 
-  footer a {
-    color: #1d4c44;
+  footer[id="contact"] a {
+    color: #1d4c44 !important;
   }
 
-  footer .border-primary-foreground {
+  footer[id="contact"] button {
+    color: #1d4c44 !important;
+  }
+
+  footer[id="contact"] h3 {
+    color: #1d4c44 !important;
+  }
+
+  footer[id="contact"] svg {
+    color: #1d4c44 !important;
+  }
+
+  footer[id="contact"] .border-primary-foreground {
     border-color: rgba(29, 76, 68, 0.2) !important;
   }
 
