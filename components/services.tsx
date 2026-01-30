@@ -82,7 +82,7 @@ export function Services() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="mb-16 max-w-4xl mx-auto">
-          <ScrollReveal type="fade-up" delay={0}>
+          <ScrollReveal type="slide-fade-left" delay={0}>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-center">Our Services</h2>
           </ScrollReveal>
           <ScrollReveal type="fade-up" delay={100}>
