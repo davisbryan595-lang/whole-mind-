@@ -232,8 +232,8 @@
   }
 
   .section-home {
-    background-image: url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=2000&q=80");
-    --section-overlay: linear-gradient(125deg, rgba(29, 76, 68, 0.78), rgba(29, 76, 68, 0.45));
+    background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80");
+    --section-overlay: rgba(0, 0, 0, 0.25);
   }
 
   .section-about {
