@@ -13,7 +13,6 @@ const navLinks = [
   { href: "#testimonials", label: "Testimonials" },
   { href: "#faq", label: "FAQ" },
   { href: "#appointment", label: "Book now" },
-  { href: "#contact", label: "Contact" },
 ]
 
 export function Navbar() {
