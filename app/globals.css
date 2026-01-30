@@ -474,6 +474,15 @@
     border-color: rgba(57, 167, 142, 0.3);
   }
 
+  /* Book Now button gradient */
+  .book-now-btn {
+    background: linear-gradient(135deg, #39a78e 0%, #2d8f78 50%, #1d5f52 100%);
+  }
+
+  .book-now-btn:hover {
+    background: linear-gradient(135deg, #2d8f78 0%, #1d5f52 50%, #1a4d41 100%);
+  }
+
   /* Hero section custom styles */
   .hero-tagline {
     color: #D4AF37;
