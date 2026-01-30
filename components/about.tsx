@@ -7,15 +7,21 @@ export function About() {
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
         {/* Header Section */}
         <div className="mb-24 lg:mb-32 max-w-4xl">
-          <p className="about-tagline mb-6">Our Practice</p>
-          <h2 className="about-heading mb-8">
-            Compassionate Care
-            <br />
-            for Whole Wellness
-          </h2>
-          <p className="about-intro">
-            At WholeMind Behavioral Health & Wellness, we believe that true healing begins when the mind, body, and spirit are nurtured together. Founded by Esther Amune, MSN, APRN, PMHNP-BC, our practice offers compassionate, integrative care that restores balance, builds resilience, and empowers individuals to thrive.
-          </p>
+          <ScrollReveal type="fade-up" delay={0}>
+            <p className="about-tagline mb-6">Our Practice</p>
+          </ScrollReveal>
+          <ScrollReveal type="fade-up" delay={100}>
+            <h2 className="about-heading mb-8">
+              Compassionate Care
+              <br />
+              for Whole Wellness
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal type="fade-up" delay={200}>
+            <p className="about-intro">
+              At WholeMind Behavioral Health & Wellness, we believe that true healing begins when the mind, body, and spirit are nurtured together. Founded by Esther Amune, MSN, APRN, PMHNP-BC, our practice offers compassionate, integrative care that restores balance, builds resilience, and empowers individuals to thrive.
+            </p>
+          </ScrollReveal>
         </div>
 
         {/* Content Grid */}
