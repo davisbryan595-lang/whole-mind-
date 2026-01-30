@@ -238,7 +238,7 @@
 
   .section-about {
     background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80");
-    --section-overlay: linear-gradient(140deg, rgba(17, 44, 39, 0.72), rgba(17, 44, 39, 0.3));
+    --section-overlay: rgba(0, 0, 0, 0.35);
   }
 
   .section-services {
