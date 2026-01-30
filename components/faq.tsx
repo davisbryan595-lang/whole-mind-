@@ -71,26 +71,30 @@ export function FAQ() {
         </div>
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start max-w-6xl mx-auto">
           <div className="grid gap-4">
-            <div className="image-tile h-80">
-              <Image
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80"
-                alt="WholeMind team member answering client questions"
-                fill
-                className="object-cover"
-                sizes="(min-width:1280px) 420px, (min-width:768px) 45vw, 90vw"
-              />
-              <span className="image-accent" />
-            </div>
-            <div className="image-tile h-40">
-              <Image
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
-                alt="Collaborative approach to behavioral health care"
-                fill
-                className="object-cover"
-                sizes="(min-width:1280px) 320px, (min-width:768px) 40vw, 90vw"
-              />
-              <span className="image-accent" />
-            </div>
+            <ScrollReveal type="rotate-3d" delay={50}>
+              <div className="image-tile h-80">
+                <Image
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80"
+                  alt="WholeMind team member answering client questions"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width:1280px) 420px, (min-width:768px) 45vw, 90vw"
+                />
+                <span className="image-accent" />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal type="rotate-3d" delay={100}>
+              <div className="image-tile h-40">
+                <Image
+                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+                  alt="Collaborative approach to behavioral health care"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width:1280px) 320px, (min-width:768px) 40vw, 90vw"
+                />
+                <span className="image-accent" />
+              </div>
+            </ScrollReveal>
           </div>
           <div className="frosted-panel rounded-3xl p-6 md:p-8">
             <Accordion type="single" collapsible className="space-y-4">
