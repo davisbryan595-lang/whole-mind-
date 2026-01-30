@@ -310,9 +310,9 @@
     display: none;
   }
 
-  /* Providers Section - Luxury gradient background */
+  /* Providers Section - Sage gradient background */
   .section-providers {
-    background: linear-gradient(135deg, #f5f1e8 0%, #e8dfd0 50%, #f0ece3 100%);
+    background: linear-gradient(135deg, #fefaef 0%, #eef4f1 33%, #d9ebe5 66%, #eef4f1 100%);
     --section-overlay: transparent;
   }
 
@@ -330,9 +330,9 @@
     display: none;
   }
 
-  /* FAQ Section - Luxury gradient background */
+  /* FAQ Section - Sage gradient background */
   .section-faq {
-    background: linear-gradient(135deg, #f5f1e8 0%, #e8dfd0 50%, #f0ece3 100%);
+    background: linear-gradient(135deg, #fefaef 0%, #eef4f1 33%, #d9ebe5 66%, #eef4f1 100%);
     --section-overlay: transparent;
   }
 
