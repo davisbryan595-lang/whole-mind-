@@ -154,6 +154,25 @@
     }
   }
 
+  @keyframes rotateIn3D {
+    from {
+      opacity: 0;
+      transform: rotateY(-75deg) rotateX(45deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotateY(0) rotateX(0);
+    }
+  }
+
+  .reveal {
+    perspective: 1000px;
+  }
+
+  .reveal-visible {
+    animation: rotateIn3D 0.8s ease-out forwards;
+  }
+
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
