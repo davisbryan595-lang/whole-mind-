@@ -20,10 +20,10 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="section-cover section-home h-screen flex items-center justify-start relative pt-20"
+      className="section-cover section-home min-h-screen flex items-center justify-start relative pt-32 pb-16 md:pt-40 md:pb-20"
     >
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
-        <div className="w-full md:w-1/2 lg:w-5/12 space-y-6">
+        <div className="w-full md:w-1/2 lg:w-5/12 space-y-5">
           {/* Tagline */}
           <p className="hero-tagline">Behavioral Health & Wellness</p>
 
