@@ -17,11 +17,15 @@ export function ReferralForm() {
   return (
     <section id="appointment" className="section-cover section-referral py-24">
       <div className="container mx-auto px-4">
-        <div className="frosted-panel rounded-3xl px-6 py-10 md:px-12 text-center max-w-4xl mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Book an Appointment</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Start your journey to wellness — schedule your session today
-          </p>
+        <div className="mb-12 max-w-4xl mx-auto">
+          <ScrollReveal type="fade-up" delay={0}>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-center">Book an Appointment</h2>
+          </ScrollReveal>
+          <ScrollReveal type="fade-up" delay={100}>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty text-center">
+              Start your journey to wellness — schedule your session today
+            </p>
+          </ScrollReveal>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] items-start max-w-6xl mx-auto">
