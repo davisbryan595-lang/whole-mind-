@@ -104,14 +104,16 @@ export function Services() {
                 className={`group relative flex flex-col items-center text-center p-6 rounded-3xl shadow-lg bg-white/70 backdrop-blur-md border border-white/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2`}
               >
                 {/* Service Image */}
-                <div className="relative w-full h-40 rounded-2xl overflow-hidden mb-4">
-                  <Image
-                    src={service.image}
-                    alt={service.imageAlt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
+                <ScrollReveal type="rotate-3d" delay={50}>
+                  <div className="relative w-full h-40 rounded-2xl overflow-hidden mb-4">
+                    <Image
+                      src={service.image}
+                      alt={service.imageAlt}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                </ScrollReveal>
 
                 {/* Icon + Title */}
                 <div className="flex items-center justify-center gap-3 mb-2">
