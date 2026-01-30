@@ -207,6 +207,14 @@
     animation: fadeUpSlide 0.6s ease-out forwards;
   }
 
+  .reveal-slide-fade-left {
+    perspective: 1000px;
+  }
+
+  .reveal-slide-fade-left.reveal-visible {
+    animation: slideFadeLeft 0.7s ease-out forwards;
+  }
+
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
