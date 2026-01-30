@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import { Brain, Pill, Apple, Heart, Users, Video, ChevronDown, ChevronUp } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
@@ -105,12 +104,11 @@ export function Services() {
               >
                 {/* Service Image */}
                 <ScrollReveal type="rotate-3d" delay={50}>
-                  <div className="relative w-full h-40 rounded-2xl overflow-hidden mb-4">
-                    <Image
+                  <div className="w-full h-40 rounded-2xl overflow-hidden mb-4">
+                    <img
                       src={service.image}
                       alt={service.imageAlt}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                 </ScrollReveal>

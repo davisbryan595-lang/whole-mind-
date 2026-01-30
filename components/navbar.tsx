@@ -51,16 +51,23 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isBookNow = link.label === "Book now"
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={
+                    isBookNow
+                      ? "text-sm font-semibold px-6 py-2 rounded-full text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 book-now-btn"
+                      : "text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  }
+                >
+                  {link.label}
+                </a>
+              )
+            })}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -77,16 +84,23 @@ export function Navbar() {
         {isMobileMenuOpen && (
           <div className="md:hidden pb-4">
             <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isBookNow = link.label === "Book now"
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className={
+                      isBookNow
+                        ? "text-sm font-semibold px-6 py-2 rounded-full text-white text-center transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 book-now-btn"
+                        : "text-sm font-medium text-foreground hover:text-primary transition-colors"
+                    }
+                  >
+                    {link.label}
+                  </a>
+                )
+              })}
             </div>
           </div>
         )}
