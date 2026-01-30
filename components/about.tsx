@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function About() {
   return (
