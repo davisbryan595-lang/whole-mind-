@@ -486,20 +486,20 @@
     font-family: ui-serif, Georgia, serif;
     color: #FFFFFF;
     font-weight: 700;
-    font-size: 3.5rem;
+    font-size: 2.2rem;
     line-height: 1.1;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   }
 
   @media (min-width: 768px) {
     .hero-heading {
-      font-size: 4.5rem;
+      font-size: 3rem;
     }
   }
 
   .hero-subheading {
     color: #FFFFFF;
-    font-size: 1.25rem;
+    font-size: 0.875rem;
     line-height: 1.6;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
     font-weight: 400;
@@ -507,7 +507,7 @@
 
   @media (min-width: 768px) {
     .hero-subheading {
-      font-size: 1.5rem;
+      font-size: 1.125rem;
     }
   }
 
