@@ -224,17 +224,17 @@
 
   /* Glassmorphism utility classes */
   .glass {
-    background: rgba(254, 250, 239, 0.7);
+    background: rgba(254, 250, 239, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(181, 200, 193, 0.3);
+    border: 1px solid rgba(57, 167, 142, 0.2);
   }
 
   .glass-dark {
-    background: rgba(29, 76, 68, 0.1);
+    background: rgba(29, 76, 68, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(181, 200, 193, 0.2);
+    border: 1px solid rgba(57, 167, 142, 0.15);
   }
 
   .section-cover {
