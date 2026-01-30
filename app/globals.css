@@ -379,7 +379,7 @@
   }
 
   .liquid-hover::after {
-    background: linear-gradient(180deg, var(--liquid-sheen, rgba(254, 250, 239, 0.45)) 0%, var(--liquid-fill, rgba(29, 76, 68, 0.8)) 100%);
+    background: linear-gradient(180deg, var(--liquid-sheen, rgba(254, 250, 239, 0.45)) 0%, var(--liquid-fill, rgba(57, 167, 142, 0.75)) 100%);
     transform: translateY(110%);
     z-index: -1;
     opacity: 0.95;
@@ -391,12 +391,12 @@
 
   .liquid-hover:hover {
     transform: translateY(-3px);
-    box-shadow: 0 22px 45px rgba(17, 44, 39, 0.28);
+    box-shadow: 0 22px 45px rgba(29, 76, 68, 0.25);
   }
 
   .liquid-hover[data-surface="primary"] {
     --liquid-base: var(--primary);
-    --liquid-fill: rgba(17, 56, 48, 0.92);
+    --liquid-fill: rgba(57, 167, 142, 0.88);
     --liquid-sheen: rgba(254, 250, 239, 0.4);
     color: var(--primary-foreground);
   }
@@ -410,14 +410,14 @@
 
   .liquid-hover[data-surface="outline"] {
     --liquid-base: rgba(254, 250, 239, 0.18);
-    --liquid-fill: rgba(29, 76, 68, 0.75);
+    --liquid-fill: rgba(57, 167, 142, 0.7);
     --liquid-sheen: rgba(254, 250, 239, 0.65);
     color: var(--primary);
   }
 
   .liquid-hover[data-surface="muted"] {
     --liquid-base: var(--secondary);
-    --liquid-fill: rgba(29, 76, 68, 0.45);
+    --liquid-fill: rgba(57, 167, 142, 0.4);
     --liquid-sheen: rgba(254, 250, 239, 0.35);
     color: var(--secondary-foreground);
   }
