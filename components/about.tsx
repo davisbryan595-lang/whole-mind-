@@ -54,7 +54,7 @@ export function About() {
           </div>
 
           {/* Right Column - Image */}
-          <ScrollReveal>
+          <ScrollReveal type="rotate-3d" delay={150}>
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden sticky top-24">
               <Image
                 src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80"
