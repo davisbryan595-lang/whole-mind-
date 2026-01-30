@@ -32,11 +32,15 @@ export function Providers() {
   return (
     <section id="providers" className="section-cover section-providers py-24">
       <div className="container mx-auto px-4">
-        <div className="frosted-panel rounded-3xl px-6 py-10 md:px-12 text-center max-w-4xl mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Our Founder</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Meet Esther Amune, the founder and lead clinician, guiding WholeMind with compassion, expertise, and a holistic approach.
-          </p>
+        <div className="mb-12 max-w-4xl mx-auto">
+          <ScrollReveal type="fade-up" delay={0}>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-center">Our Founder</h2>
+          </ScrollReveal>
+          <ScrollReveal type="fade-up" delay={100}>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty text-center">
+              Meet Esther Amune, the founder and lead clinician, guiding WholeMind with compassion, expertise, and a holistic approach.
+            </p>
+          </ScrollReveal>
         </div>
 
         <div className="grid md:grid-cols-1 gap-8 max-w-3xl mx-auto">
