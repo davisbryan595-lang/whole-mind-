@@ -312,7 +312,7 @@
 
   /* Providers Section - Sage gradient background */
   .section-providers {
-    background: linear-gradient(135deg, #fefaef 0%, #eef4f1 33%, #d9ebe5 66%, #eef4f1 100%);
+    background: linear-gradient(135deg, #fefaef 0%, #d9ebe5 20%, #39a78e 45%, #1d5f52 65%, #d9ebe5 85%, #fefaef 100%);
     --section-overlay: transparent;
   }
 
@@ -332,7 +332,7 @@
 
   /* FAQ Section - Sage gradient background */
   .section-faq {
-    background: linear-gradient(135deg, #fefaef 0%, #eef4f1 33%, #d9ebe5 66%, #eef4f1 100%);
+    background: linear-gradient(135deg, #fefaef 0%, #d9ebe5 20%, #39a78e 45%, #1d5f52 65%, #d9ebe5 85%, #fefaef 100%);
     --section-overlay: transparent;
   }
 
