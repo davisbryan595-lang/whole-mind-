@@ -48,15 +48,17 @@ export function About() {
           </div>
 
           {/* Right Column - Image */}
-          <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden sticky top-24">
-            <Image
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80"
-              alt="WholeMind clinicians collaborating on integrative care plans"
-              fill
-              className="object-cover"
-              sizes="(min-width:1280px) 480px, (min-width:768px) 45vw, 90vw"
-            />
-          </div>
+          <ScrollReveal>
+            <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden sticky top-24">
+              <Image
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80"
+                alt="WholeMind clinicians collaborating on integrative care plans"
+                fill
+                className="object-cover"
+                sizes="(min-width:1280px) 480px, (min-width:768px) 45vw, 90vw"
+              />
+            </div>
+          </ScrollReveal>
         </div>
 
         {/* Core Values */}
