@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Brain, Pill, Apple, Heart, Users, Video, ChevronDown, ChevronUp } from "lucide-react"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 const services = [
   {
