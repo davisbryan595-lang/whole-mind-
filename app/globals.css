@@ -165,12 +165,35 @@
     }
   }
 
+  @keyframes fadeUpSlide {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .reveal {
     perspective: 1000px;
   }
 
-  .reveal-visible {
+  .reveal-rotate-3d {
+    perspective: 1000px;
+  }
+
+  .reveal-rotate-3d.reveal-visible {
     animation: rotateIn3D 0.8s ease-out forwards;
+  }
+
+  .reveal-fade-up {
+    perspective: 1000px;
+  }
+
+  .reveal-fade-up.reveal-visible {
+    animation: fadeUpSlide 0.6s ease-out forwards;
   }
 
   /* Smooth scrolling */
