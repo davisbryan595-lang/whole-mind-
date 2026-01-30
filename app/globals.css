@@ -176,6 +176,17 @@
     }
   }
 
+  @keyframes slideFadeLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   .reveal {
     perspective: 1000px;
   }
