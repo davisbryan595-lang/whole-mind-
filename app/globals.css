@@ -340,9 +340,9 @@
     display: none;
   }
 
-  /* Referral/Appointment Section - White background */
+  /* Referral/Appointment Section - Sage gradient background */
   .section-referral {
-    background: #ffffff;
+    background: linear-gradient(135deg, #fefaef 0%, #d9ebe5 20%, #39a78e 45%, #1d5f52 65%, #d9ebe5 85%, #fefaef 100%);
     --section-overlay: transparent;
   }
 
