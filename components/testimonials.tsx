@@ -54,37 +54,43 @@ export function Testimonials() {
         </div>
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] items-center max-w-6xl mx-auto">
           <div className="grid gap-4">
-            <div className="image-tile h-80">
-              <Image
-                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80"
-                alt="Client embracing a sense of hope after therapy"
-                fill
-                className="object-cover"
-                sizes="(min-width:1280px) 420px, (min-width:768px) 45vw, 90vw"
-              />
-              <span className="image-accent" />
-            </div>
+            <ScrollReveal type="rotate-3d" delay={50}>
+              <div className="image-tile h-80">
+                <Image
+                  src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80"
+                  alt="Client embracing a sense of hope after therapy"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width:1280px) 420px, (min-width:768px) 45vw, 90vw"
+                />
+                <span className="image-accent" />
+              </div>
+            </ScrollReveal>
             <div className="grid grid-cols-2 gap-4">
-              <div className="image-tile h-32">
-                <Image
-                  src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
-                  alt="Support group celebrating progress together"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width:1280px) 200px, (min-width:768px) 22vw, 40vw"
-                />
-                <span className="image-accent" />
-              </div>
-              <div className="image-tile h-32">
-                <Image
-                  src="https://images.unsplash.com/photo-1551298375-0c5e0b1a2729?auto=format&fit=crop&w=900&q=80"
-                  alt="Journaling progress as part of therapy journey"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width:1280px) 200px, (min-width:768px) 22vw, 40vw"
-                />
-                <span className="image-accent" />
-              </div>
+              <ScrollReveal type="rotate-3d" delay={100}>
+                <div className="image-tile h-32">
+                  <Image
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+                    alt="Support group celebrating progress together"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width:1280px) 200px, (min-width:768px) 22vw, 40vw"
+                  />
+                  <span className="image-accent" />
+                </div>
+              </ScrollReveal>
+              <ScrollReveal type="rotate-3d" delay={150}>
+                <div className="image-tile h-32">
+                  <Image
+                    src="https://images.unsplash.com/photo-1551298375-0c5e0b1a2729?auto=format&fit=crop&w=900&q=80"
+                    alt="Journaling progress as part of therapy journey"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width:1280px) 200px, (min-width:768px) 22vw, 40vw"
+                  />
+                  <span className="image-accent" />
+                </div>
+              </ScrollReveal>
             </div>
           </div>
           <Card className="frosted-panel rounded-3xl border-border/40">
