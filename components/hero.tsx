@@ -43,7 +43,7 @@ export function Hero() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 pt-2">
             <button
               onClick={scrollToReferral}
               className="hero-btn-primary text-base md:text-lg px-8 md:px-10 py-3 md:py-4 w-full sm:w-auto text-center"
