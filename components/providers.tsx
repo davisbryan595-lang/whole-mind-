@@ -49,15 +49,17 @@ export function Providers() {
               key={index}
               className="frosted-panel provider-card overflow-hidden rounded-3xl border-border/50 py-0 gap-0 transition-all duration-500"
             >
-              <div className="relative h-72 w-full">
-                <Image
-                  src={provider.photo}
-                  alt={provider.name}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width:1280px) 360px, (min-width:768px) 32vw, 90vw"
-                />
-              </div>
+              <ScrollReveal type="rotate-3d" delay={50}>
+                <div className="relative h-72 w-full">
+                  <Image
+                    src={provider.photo}
+                    alt={provider.name}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width:1280px) 360px, (min-width:768px) 32vw, 90vw"
+                  />
+                </div>
+              </ScrollReveal>
               <CardContent className="p-6 space-y-4">
                 <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto -mt-12 border-4 border-background">
                   <Heart className="text-primary" size={36} />
