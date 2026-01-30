@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 const faqs = [
   {
@@ -58,34 +59,42 @@ export function FAQ() {
   return (
     <section id="faq" className="section-cover section-faq py-24">
       <div className="container mx-auto px-4">
-        <div className="frosted-panel rounded-3xl px-6 py-10 md:px-12 text-center max-w-4xl mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Find answers to common questions about our holistic, integrative, and faith-informed behavioral health services.
-          </p>
+        <div className="mb-12 max-w-4xl mx-auto">
+          <ScrollReveal type="slide-fade-left" delay={0}>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-center">Frequently Asked Questions</h2>
+          </ScrollReveal>
+          <ScrollReveal type="fade-up" delay={100}>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty text-center">
+              Find answers to common questions about our holistic, integrative, and faith-informed behavioral health services.
+            </p>
+          </ScrollReveal>
         </div>
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start max-w-6xl mx-auto">
           <div className="grid gap-4">
-            <div className="image-tile h-80">
-              <Image
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80"
-                alt="WholeMind team member answering client questions"
-                fill
-                className="object-cover"
-                sizes="(min-width:1280px) 420px, (min-width:768px) 45vw, 90vw"
-              />
-              <span className="image-accent" />
-            </div>
-            <div className="image-tile h-40">
-              <Image
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
-                alt="Collaborative approach to behavioral health care"
-                fill
-                className="object-cover"
-                sizes="(min-width:1280px) 320px, (min-width:768px) 40vw, 90vw"
-              />
-              <span className="image-accent" />
-            </div>
+            <ScrollReveal type="rotate-3d" delay={50}>
+              <div className="image-tile h-80">
+                <Image
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80"
+                  alt="WholeMind team member answering client questions"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width:1280px) 420px, (min-width:768px) 45vw, 90vw"
+                />
+                <span className="image-accent" />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal type="rotate-3d" delay={100}>
+              <div className="image-tile h-40">
+                <Image
+                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+                  alt="Collaborative approach to behavioral health care"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width:1280px) 320px, (min-width:768px) 40vw, 90vw"
+                />
+                <span className="image-accent" />
+              </div>
+            </ScrollReveal>
           </div>
           <div className="frosted-panel rounded-3xl p-6 md:p-8">
             <Accordion type="single" collapsible className="space-y-4">

@@ -6,7 +6,7 @@ interface ScrollRevealProps {
   children: ReactNode
   className?: string
   delay?: number
-  type?: "fade-up" | "rotate-3d"
+  type?: "fade-up" | "rotate-3d" | "slide-fade-left"
 }
 
 export function ScrollReveal({ children, className = "", delay = 0, type = "fade-up" }: ScrollRevealProps) {

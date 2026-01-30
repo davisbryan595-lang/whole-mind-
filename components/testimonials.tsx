@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 const testimonials = [
   {
@@ -41,45 +42,55 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="section-cover section-testimonials py-24">
       <div className="container mx-auto px-4">
-        <div className="frosted-panel rounded-3xl px-6 py-10 md:px-12 text-center max-w-4xl mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">What Our Clients Say</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Real stories of healing and transformation
-          </p>
+        <div className="mb-12 max-w-4xl mx-auto">
+          <ScrollReveal type="slide-fade-left" delay={0}>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-center">What Our Clients Say</h2>
+          </ScrollReveal>
+          <ScrollReveal type="fade-up" delay={100}>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty text-center">
+              Real stories of healing and transformation
+            </p>
+          </ScrollReveal>
         </div>
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] items-center max-w-6xl mx-auto">
           <div className="grid gap-4">
-            <div className="image-tile h-80">
-              <Image
-                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80"
-                alt="Client embracing a sense of hope after therapy"
-                fill
-                className="object-cover"
-                sizes="(min-width:1280px) 420px, (min-width:768px) 45vw, 90vw"
-              />
-              <span className="image-accent" />
-            </div>
+            <ScrollReveal type="rotate-3d" delay={50}>
+              <div className="image-tile h-80">
+                <Image
+                  src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80"
+                  alt="Client embracing a sense of hope after therapy"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width:1280px) 420px, (min-width:768px) 45vw, 90vw"
+                />
+                <span className="image-accent" />
+              </div>
+            </ScrollReveal>
             <div className="grid grid-cols-2 gap-4">
-              <div className="image-tile h-32">
-                <Image
-                  src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
-                  alt="Support group celebrating progress together"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width:1280px) 200px, (min-width:768px) 22vw, 40vw"
-                />
-                <span className="image-accent" />
-              </div>
-              <div className="image-tile h-32">
-                <Image
-                  src="https://images.unsplash.com/photo-1551298375-0c5e0b1a2729?auto=format&fit=crop&w=900&q=80"
-                  alt="Journaling progress as part of therapy journey"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width:1280px) 200px, (min-width:768px) 22vw, 40vw"
-                />
-                <span className="image-accent" />
-              </div>
+              <ScrollReveal type="rotate-3d" delay={100}>
+                <div className="image-tile h-32">
+                  <Image
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+                    alt="Support group celebrating progress together"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width:1280px) 200px, (min-width:768px) 22vw, 40vw"
+                  />
+                  <span className="image-accent" />
+                </div>
+              </ScrollReveal>
+              <ScrollReveal type="rotate-3d" delay={150}>
+                <div className="image-tile h-32">
+                  <Image
+                    src="https://images.unsplash.com/photo-1551298375-0c5e0b1a2729?auto=format&fit=crop&w=900&q=80"
+                    alt="Journaling progress as part of therapy journey"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width:1280px) 200px, (min-width:768px) 22vw, 40vw"
+                  />
+                  <span className="image-accent" />
+                </div>
+              </ScrollReveal>
             </div>
           </div>
           <Card className="frosted-panel rounded-3xl border-border/40">
