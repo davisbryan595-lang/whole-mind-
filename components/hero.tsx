@@ -47,7 +47,7 @@ export function Hero() {
         poster="https://images.unsplash.com/photo-1433001076297-9204ce32b36d?auto=format&fit=crop&w=2000&q=80"
       >
         <source
-          src="https://videos.pexels.com/video-files/2881327/2881327-sd_640_360_25fps.mp4"
+          src="https://videos.pexels.com/video-files/854271/854271-sd_960_540_25fps.mp4"
           type="video/mp4"
         />
       </video>
