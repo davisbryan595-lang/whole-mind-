@@ -28,13 +28,16 @@ export function Hero() {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-[-1]"
-        poster="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80"
+        poster="https://images.unsplash.com/photo-1433001076297-9204ce32b36d?auto=format&fit=crop&w=2000&q=80"
       >
         <source
-          src="https://videos.pexels.com/video-files/4802873/4802873-sd_960_540_30fps.mp4"
+          src="https://videos.pexels.com/video-files/2881327/2881327-sd_640_360_25fps.mp4"
           type="video/mp4"
         />
       </video>
+      <audio autoPlay loop className="hidden">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+      </audio>
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         <div className="w-full md:w-1/2 lg:w-5/12 space-y-5">
           {/* Tagline */}
