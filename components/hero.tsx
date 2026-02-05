@@ -79,8 +79,8 @@ export function Hero() {
 
           {/* Subheading */}
           <p className="hero-subheading">
-            Compassionate, evidence-based, and integrative behavioral health care addressing the whole person—mind,
-            body, and spirit. We empower individuals to achieve lasting wellness and emotional balance.
+            A tranquil space for healing and restoration. Our team provides compassionate, integrative care that honors
+            the whole person—mind, body, and spirit—guiding you toward peace, balance, and wholeness.
           </p>
 
           {/* Buttons */}
