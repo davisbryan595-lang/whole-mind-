@@ -10,19 +10,19 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 const testimonials = [
   {
     quote:
-      "WholeMind changed my life. The integration of faith and therapy helped me find peace I didn't think was possible. The team truly cares about the whole person.",
+      "WholeMind changed my life. The spiritually-integrated approach helped me find peace I didn't think was possible. The team truly cares about the whole person.",
     author: "Jennifer M.",
     location: "Tampa, FL",
   },
   {
     quote:
-      "The nutritional psychiatry approach was a game-changer for me. I never realized how much my diet affected my mental health. Dr. Johnson is incredibly knowledgeable and compassionate.",
+      "The nutritional psychiatry approach was a game-changer for me. I never realized how much my diet affected my mental health. The team is incredibly knowledgeable and compassionate.",
     author: "Robert T.",
     location: "Orlando, FL",
   },
   {
     quote:
-      "After years of struggling, I finally found a place that understands me. The faith-based approach resonated deeply, and I've made more progress in 6 months than in years of traditional therapy.",
+      "After years of struggling, I finally found a place that understands me. The spiritually-informed approach resonated deeply, and I've made more progress in 6 months than in years of traditional therapy.",
     author: "Maria S.",
     location: "Miami, FL",
   },
