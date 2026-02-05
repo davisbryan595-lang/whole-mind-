@@ -13,11 +13,11 @@ const providers = [
     name: "Esther Amune, MSN, APRN, PMHNP-BC",
     title: "Founder & Lead Psychiatric Nurse Practitioner",
     credentials: "MSN, APRN, PMHNP-BC",
-    bio: "Esther Amune is a compassionate and integrative psychiatric nurse practitioner specializing in holistic behavioral health. She combines evidence-based therapy, nutritional psychiatry, and faith-informed practices to empower individuals to achieve lasting wellness and emotional balance.",
+    bio: "Our team provides compassionate and integrative psychiatric care specializing in holistic behavioral health. We combine evidence-based therapy, nutritional psychiatry, and spiritually-informed practices to empower individuals to achieve lasting wellness and emotional balance.",
     specialties: [
       "Holistic & Integrative Psychiatry",
       "Nutritional Psychiatry",
-      "Faith-Based Counseling",
+      "Spiritually-Informed Counseling",
       "Mindfulness & Stress Reduction",
       "Medication Management",
       "Lifestyle & Wellness Coaching",
@@ -34,11 +34,11 @@ export function Providers() {
       <div className="container mx-auto px-4">
         <div className="mb-12 max-w-4xl mx-auto">
           <ScrollReveal type="slide-fade-left" delay={0}>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-center">Our Founder</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 text-center">Our Team</h2>
           </ScrollReveal>
           <ScrollReveal type="fade-up" delay={100}>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty text-center">
-              Meet Esther Amune, the founder and lead clinician, guiding WholeMind with compassion, expertise, and a holistic approach.
+              Meet our team of dedicated professionals, led by our founder, committed to guiding WholeMind with compassion and expertise.
             </p>
           </ScrollReveal>
         </div>
