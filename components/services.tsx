@@ -42,12 +42,12 @@ const services = [
     icon: Heart,
     title: "Faith-Based Counseling",
     description: [
-      "Therapeutic approach honoring your faith and spiritual identity.",
-      "Blends clinical care with your personal values and beliefs.",
+      "An optional therapeutic approach for those interested in honoring their faith and spiritual identity.",
+      "Blends clinical care with your personal values and beliefs, if desired.",
       "Provides space for healing rooted in compassion and purpose.",
     ],
     image: "https://images.unsplash.com/photo-1494809610410-160faaed4de0?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Hands joined in reflection during faith-based therapy",
+    imageAlt: "Hands joined in reflection during spiritually-integrated therapy",
   },
   {
     icon: Users,
@@ -86,7 +86,7 @@ export function Services() {
           </ScrollReveal>
           <ScrollReveal type="fade-up" delay={100}>
             <p className="text-xl text-muted-foreground text-pretty text-center">
-              Evidence-based, holistic, and faith-informed care designed to nurture the mind, body, and spirit.
+              Evidence-based and holistic care designed to nurture the mind, body, and spirit.
             </p>
           </ScrollReveal>
         </div>
