@@ -19,9 +19,9 @@ const faqs = [
       "Nutritional psychiatry explores the connection between diet, nutrition, and mental health. We integrate evidence-based nutritional strategies to support brain health, emotional well-being, and overall holistic care.",
   },
   {
-    question: "How does faith-based therapy work?",
+    question: "Is spiritually-integrated therapy available?",
     answer:
-      "Faith-based therapy honors your spiritual beliefs and integrates them into the therapeutic process. We combine your faith perspective with evidence-based clinical approaches to support healing and personal growth.",
+      "Yes! For those who desire it, we honor your spiritual beliefs and can integrate them into the therapeutic process. We combine your faith perspective with evidence-based clinical approaches to support healing and personal growth.",
   },
   {
     question: "How long are typical appointments?",
@@ -46,7 +46,7 @@ const faqs = [
   {
     question: "Do you prescribe medication?",
     answer:
-      "Our clinicians may prescribe medication when clinically appropriate. We emphasize a holistic approach, considering therapy, lifestyle, nutrition, and faith-informed care alongside medication.",
+      "Our clinicians may prescribe medication when clinically appropriate. We emphasize a holistic approach, considering therapy, lifestyle, and nutrition alongside medication.",
   },
   {
     question: "How quickly can I get an appointment?",
@@ -65,7 +65,7 @@ export function FAQ() {
           </ScrollReveal>
           <ScrollReveal type="fade-up" delay={100}>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty text-center">
-              Find answers to common questions about our holistic, integrative, and faith-informed behavioral health services.
+              Find answers to common questions about our holistic and integrative behavioral health services.
             </p>
           </ScrollReveal>
         </div>
