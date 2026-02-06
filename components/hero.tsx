@@ -11,7 +11,7 @@ export function Hero() {
     const audio = audioRef.current
     if (!audio) return
 
-    audio.volume = 0.4
+    audio.volume = 0.8
 
     if (!isMuted) {
       audio.muted = false
@@ -67,7 +67,7 @@ export function Hero() {
       </video>
       <div className="absolute inset-0 bg-black/40 z-10" />
       <audio ref={audioRef} loop preload="auto">
-        <source src="https://raw.githubusercontent.com/rafaelrinaldi/nature-sounds/master/sounds/waterfall.mp3" type="audio/mpeg" />
+        <source src="https://www.soundjay.com/nature/river-1.mp3" type="audio/mpeg" />
       </audio>
       <div className="absolute top-32 right-8 z-30">
         <button
