@@ -11,6 +11,7 @@ export function Hero() {
     if (audioRef.current) {
       audioRef.current.volume = 0.4
       if (!isMuted) {
+        audioRef.current.muted = false
         audioRef.current.play().catch((e) => console.error("Audio play failed:", e))
       } else {
         audioRef.current.pause()
