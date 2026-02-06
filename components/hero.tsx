@@ -8,14 +8,25 @@ export function Hero() {
   const audioRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.4
-      if (!isMuted) {
-        audioRef.current.muted = false
-        audioRef.current.play().catch((e) => console.error("Audio play failed:", e))
-      } else {
-        audioRef.current.pause()
+    const audio = audioRef.current
+    if (!audio) return
+
+    audio.volume = 0.4
+
+    if (!isMuted) {
+      audio.muted = false
+      const playPromise = audio.play()
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          if (error.name === "AbortError") {
+            // Safe to ignore: play() was interrupted by pause()
+          } else {
+            console.error("Audio play failed:", error)
+          }
+        })
       }
+    } else {
+      audio.pause()
     }
   }, [isMuted])
 
