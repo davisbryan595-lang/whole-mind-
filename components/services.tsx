@@ -24,8 +24,8 @@ const services = [
       "Regular follow-ups to ensure safety and effectiveness.",
       "Collaborative care with your primary or specialty providers.",
     ],
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Pharmacist preparing personalized medication plan",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F4ffb27d4f35e4624a6cecd10aa541cf5%2F3894c26988494d72919a81557633a82f?format=webp&width=800&height=1200",
+    imageAlt: "Clinician and patient discussing medication with an unopened pill bottle on the table",
   },
   {
     icon: Apple,
@@ -57,8 +57,8 @@ const services = [
       "Focus on grounding, awareness, and resilience-building.",
       "Customized tools to enhance emotional regulation.",
     ],
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Therapist guiding a group mindfulness session",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F4ffb27d4f35e4624a6cecd10aa541cf5%2Fcc7f94bab56742c7927ee49253f923a4?format=webp&width=800&height=1200",
+    imageAlt: "Woman meditating peacefully in a lush green field at sunset",
   },
   {
     icon: Video,
@@ -92,7 +92,7 @@ export function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-[1400px] mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon
             const isOpen = openIndex === index
@@ -104,7 +104,7 @@ export function Services() {
               >
                 {/* Service Image */}
                 <ScrollReveal type="rotate-3d" delay={50}>
-                  <div className="w-full h-40 rounded-2xl overflow-hidden mb-4">
+                  <div className="w-[calc(100%+3rem)] -mx-6 h-60 overflow-hidden mb-6 rounded-t-3xl -mt-6">
                     <img
                       src={service.image}
                       alt={service.imageAlt}
