@@ -10,7 +10,7 @@ export function Hero() {
   useEffect(() => {
     const audio = audioRef.current
     if (!audio) return
-    audio.volume = 0.8
+    audio.volume = 0.15
   }, [])
 
   const toggleMute = () => {
@@ -64,8 +64,7 @@ export function Hero() {
       </video>
       <div className="absolute inset-0 bg-black/40 z-10" />
       <audio ref={audioRef} loop preload="auto" crossOrigin="anonymous" muted>
-        <source src="https://raw.githubusercontent.com/rafaelrinaldi/nature-sounds/master/sounds/waterfall.mp3" type="audio/mpeg" />
-        <source src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Waterfall_in_the_forest.ogg" type="audio/ogg" />
+        <source src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Water_fall.ogg" type="audio/ogg" />
       </audio>
       <div className="absolute top-32 right-8 z-30">
         <button
