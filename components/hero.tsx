@@ -10,7 +10,7 @@ export function Hero() {
   useEffect(() => {
     const audio = audioRef.current
     if (!audio) return
-    audio.volume = 0.3
+    audio.volume = 0.15
   }, [])
 
   const toggleMute = () => {
