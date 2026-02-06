@@ -15,7 +15,7 @@ const conditions = [
   "OCD",
   "Stress Management",
   "Relationship Issues",
-  "And other mental health challenges",
+  "And other mental health problems",
 ]
 
 export function ConditionsWeTreat() {
