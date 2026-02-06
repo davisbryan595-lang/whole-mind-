@@ -11,7 +11,14 @@ export function Hero() {
     if (audioRef.current) {
       audioRef.current.muted = isMuted
       if (!isMuted) {
-        audioRef.current.play().catch((e) => console.log("Audio play blocked:", e))
+        const playPromise = audioRef.current.play()
+        if (playPromise !== undefined) {
+          playPromise.catch((e) => {
+            console.error("Audio play failed:", e)
+          })
+        }
+      } else {
+        audioRef.current.pause()
       }
     }
   }, [isMuted])
