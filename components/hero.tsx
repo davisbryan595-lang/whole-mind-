@@ -1,8 +1,35 @@
 "use client"
 
-import { ArrowDown } from "lucide-react"
+import { ArrowDown, Volume2, VolumeX } from "lucide-react"
+import { useState, useRef, useEffect } from "react"
 
 export function Hero() {
+  const [isMuted, setIsMuted] = useState(true)
+  const audioRef = useRef<HTMLAudioElement>(null)
+
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return
+    audio.volume = 0.8
+  }, [])
+
+  const toggleMute = () => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    if (isMuted) {
+      audio.muted = false
+      audio.play().catch((error) => {
+        if (error.name !== "AbortError") {
+          console.error("Audio play failed on toggle:", error)
+        }
+      })
+      setIsMuted(false)
+    } else {
+      audio.pause()
+      setIsMuted(true)
+    }
+  }
   const scrollToReferral = () => {
     const element = document.querySelector("#appointment")
     if (element) {
@@ -20,22 +47,36 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="section-cover section-home min-h-screen flex items-center justify-start relative pt-32 pb-16 md:pt-40 md:pb-20"
+      className="min-h-screen flex items-center justify-start relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden"
     >
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-[-1]"
-        poster="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        poster="https://images.unsplash.com/photo-1433001076297-9204ce32b36d?auto=format&fit=crop&w=2000&q=80"
       >
         <source
-          src="https://videos.pexels.com/video-files/4802873/4802873-sd_960_540_30fps.mp4"
+          src="https://videos.pexels.com/video-files/3209989/3209989-hd_1920_1080_25fps.mp4"
           type="video/mp4"
         />
       </video>
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div className="absolute inset-0 bg-black/40 z-10" />
+      <audio ref={audioRef} loop preload="auto" crossOrigin="anonymous" muted>
+        <source src="https://raw.githubusercontent.com/rafaelrinaldi/nature-sounds/master/sounds/waterfall.mp3" type="audio/mpeg" />
+        <source src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Waterfall_in_the_forest.ogg" type="audio/ogg" />
+      </audio>
+      <div className="absolute top-32 right-8 z-30">
+        <button
+          onClick={toggleMute}
+          className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white hover:bg-white/30 transition-all shadow-lg"
+          aria-label={isMuted ? "Unmute background sound" : "Mute background sound"}
+        >
+          {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+        </button>
+      </div>
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-20">
         <div className="w-full md:w-1/2 lg:w-5/12 space-y-5">
           {/* Tagline */}
           <p className="hero-tagline">Behavioral Health & Wellness</p>
@@ -51,8 +92,8 @@ export function Hero() {
 
           {/* Subheading */}
           <p className="hero-subheading">
-            Compassionate, evidence-based, and integrative behavioral health care addressing the whole person—mind,
-            body, and spirit. We empower individuals to achieve lasting wellness and emotional balance.
+            A tranquil space for healing and restoration. Our team provides compassionate, integrative care that honors
+            the whole person—mind, body, and spirit—guiding you toward peace, balance, and wholeness.
           </p>
 
           {/* Buttons */}
@@ -74,7 +115,7 @@ export function Hero() {
       </div>
 
       {/* Animated down arrow */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
         <ArrowDown className="text-white" size={32} />
       </div>
     </section>

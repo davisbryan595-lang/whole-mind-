@@ -19,7 +19,7 @@ export function About() {
           </ScrollReveal>
           <ScrollReveal type="fade-up" delay={200}>
             <p className="about-intro">
-              At WholeMind Behavioral Health & Wellness, we believe that true healing begins when the mind, body, and spirit are nurtured together. Founded by Esther Amune, MSN, APRN, PMHNP-BC, our practice offers compassionate, integrative care that restores balance, builds resilience, and empowers individuals to thrive.
+              At WholeMind Behavioral Health & Wellness, we believe that true healing begins when the mind, body, and spirit are nurtured together. Founded by Esther Amune, MSN, APRN, PMHNP-BC, our team offers compassionate, integrative care that restores balance, builds resilience, and empowers individuals to thrive.
             </p>
           </ScrollReveal>
         </div>
@@ -40,7 +40,7 @@ export function About() {
             <div className="space-y-3">
               <h3 className="about-section-heading">Our Vision</h3>
               <p className="about-body">
-                To redefine mental health care by integrating holistic, nutritional, and faith-based approaches that restore wholeness and promote thriving, purpose-filled lives.
+                To redefine mental health care by integrating holistic, nutritional, and inclusive approaches that restore wholeness and promote thriving, purpose-filled lives.
               </p>
             </div>
 
@@ -48,7 +48,7 @@ export function About() {
             <div className="space-y-3">
               <h3 className="about-section-heading">Our Approach</h3>
               <p className="about-body">
-                We combine evidence-based care with holistic, nutritional, and faith-informed practices to create personalized treatment plans that honor your unique journey toward wellness and emotional wholeness.
+                We combine evidence-based care with holistic and nutritional practices to create personalized treatment plans that honor your unique journey toward wellness and emotional wholeness. For those who value it, our team is also able to provide counseling that incorporates your personal faith and spiritual values.
               </p>
             </div>
           </div>
