@@ -24,8 +24,8 @@ const services = [
       "Regular follow-ups to ensure safety and effectiveness.",
       "Collaborative care with your primary or specialty providers.",
     ],
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Pharmacist preparing personalized medication plan",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F4ffb27d4f35e4624a6cecd10aa541cf5%2F3894c26988494d72919a81557633a82f?format=webp&width=800&height=1200",
+    imageAlt: "Clinician and patient discussing medication with an unopened pill bottle on the table",
   },
   {
     icon: Apple,
