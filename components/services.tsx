@@ -57,8 +57,8 @@ const services = [
       "Focus on grounding, awareness, and resilience-building.",
       "Customized tools to enhance emotional regulation.",
     ],
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Therapist guiding a group mindfulness session",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F4ffb27d4f35e4624a6cecd10aa541cf5%2Fcc7f94bab56742c7927ee49253f923a4?format=webp&width=800&height=1200",
+    imageAlt: "Woman meditating peacefully in a lush green field at sunset",
   },
   {
     icon: Video,
