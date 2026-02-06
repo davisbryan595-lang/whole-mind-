@@ -66,7 +66,7 @@ export function Hero() {
         />
       </video>
       <div className="absolute inset-0 bg-black/40 z-10" />
-      <audio ref={audioRef} loop preload="auto">
+      <audio ref={audioRef} loop preload="auto" crossOrigin="anonymous">
         <source src="https://www.soundjay.com/nature/river-1.mp3" type="audio/mpeg" />
       </audio>
       <div className="absolute top-32 right-8 z-30">
