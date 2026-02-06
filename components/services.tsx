@@ -92,7 +92,7 @@ export function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-[1400px] mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon
             const isOpen = openIndex === index
@@ -104,7 +104,7 @@ export function Services() {
               >
                 {/* Service Image */}
                 <ScrollReveal type="rotate-3d" delay={50}>
-                  <div className="w-full h-52 rounded-2xl overflow-hidden mb-6">
+                  <div className="w-[calc(100%+3rem)] -mx-6 h-60 overflow-hidden mb-6 rounded-t-3xl -mt-6">
                     <img
                       src={service.image}
                       alt={service.imageAlt}
