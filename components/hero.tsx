@@ -43,11 +43,11 @@ export function Hero() {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-[-1]"
+        className="absolute inset-0 w-full h-full object-cover z-0"
         poster="https://images.unsplash.com/photo-1433001076297-9204ce32b36d?auto=format&fit=crop&w=2000&q=80"
       >
         <source
-          src="https://videos.pexels.com/video-files/854271/854271-sd_960_540_25fps.mp4"
+          src="https://videos.pexels.com/video-files/3209989/3209989-hd_1920_1080_25fps.mp4"
           type="video/mp4"
         />
       </video>
