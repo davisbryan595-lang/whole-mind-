@@ -9,14 +9,9 @@ export function Hero() {
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.muted = isMuted
+      audioRef.current.volume = 0.4
       if (!isMuted) {
-        const playPromise = audioRef.current.play()
-        if (playPromise !== undefined) {
-          playPromise.catch((e) => {
-            console.error("Audio play failed:", e)
-          })
-        }
+        audioRef.current.play().catch((e) => console.error("Audio play failed:", e))
       } else {
         audioRef.current.pause()
       }
@@ -59,8 +54,8 @@ export function Hero() {
         />
       </video>
       <div className="absolute inset-0 bg-black/40 z-10" />
-      <audio ref={audioRef} loop className="hidden">
-        <source src="https://assets.mixkit.co/sfx/preview/mixkit-waterfall-cascade-1306.mp3" type="audio/mpeg" />
+      <audio ref={audioRef} loop preload="auto">
+        <source src="https://raw.githubusercontent.com/rafaelrinaldi/nature-sounds/master/sounds/waterfall.mp3" type="audio/mpeg" />
       </audio>
       <div className="absolute top-32 right-8 z-30">
         <button
