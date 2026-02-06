@@ -10,28 +10,25 @@ export function Hero() {
   useEffect(() => {
     const audio = audioRef.current
     if (!audio) return
-
     audio.volume = 0.8
-
-    if (!isMuted) {
-      audio.muted = false
-      const playPromise = audio.play()
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          if (error.name === "AbortError") {
-            // Safe to ignore: play() was interrupted by pause()
-          } else {
-            console.error("Audio play failed:", error)
-          }
-        })
-      }
-    } else {
-      audio.pause()
-    }
-  }, [isMuted])
+  }, [])
 
   const toggleMute = () => {
-    setIsMuted(!isMuted)
+    const audio = audioRef.current
+    if (!audio) return
+
+    if (isMuted) {
+      audio.muted = false
+      audio.play().catch((error) => {
+        if (error.name !== "AbortError") {
+          console.error("Audio play failed on toggle:", error)
+        }
+      })
+      setIsMuted(false)
+    } else {
+      audio.pause()
+      setIsMuted(true)
+    }
   }
   const scrollToReferral = () => {
     const element = document.querySelector("#appointment")
@@ -66,8 +63,9 @@ export function Hero() {
         />
       </video>
       <div className="absolute inset-0 bg-black/40 z-10" />
-      <audio ref={audioRef} loop preload="auto" crossOrigin="anonymous">
-        <source src="https://www.soundjay.com/nature/river-1.mp3" type="audio/mpeg" />
+      <audio ref={audioRef} loop preload="auto" crossOrigin="anonymous" muted>
+        <source src="https://raw.githubusercontent.com/rafaelrinaldi/nature-sounds/master/sounds/waterfall.mp3" type="audio/mpeg" />
+        <source src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Waterfall_in_the_forest.ogg" type="audio/ogg" />
       </audio>
       <div className="absolute top-32 right-8 z-30">
         <button
