@@ -36,7 +36,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="section-cover section-home min-h-screen flex items-center justify-start relative pt-32 pb-16 md:pt-40 md:pb-20"
+      className="min-h-screen flex items-center justify-start relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden"
     >
       <video
         autoPlay
@@ -51,10 +51,11 @@ export function Hero() {
           type="video/mp4"
         />
       </video>
+      <div className="absolute inset-0 bg-black/40 z-10" />
       <audio ref={audioRef} loop className="hidden">
         <source src="https://orangefreesounds.com/wp-content/uploads/2016/12/Running-water-noise.mp3" type="audio/mpeg" />
       </audio>
-      <div className="absolute top-32 right-8 z-20">
+      <div className="absolute top-32 right-8 z-30">
         <button
           onClick={toggleMute}
           className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white hover:bg-white/30 transition-all shadow-lg"
@@ -63,7 +64,7 @@ export function Hero() {
           {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
         </button>
       </div>
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-20">
         <div className="w-full md:w-1/2 lg:w-5/12 space-y-5">
           {/* Tagline */}
           <p className="hero-tagline">Behavioral Health & Wellness</p>
