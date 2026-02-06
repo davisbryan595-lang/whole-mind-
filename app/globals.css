@@ -297,7 +297,11 @@
   /* Hero section - Background video is handled in hero.tsx */
   .section-home {
     background-image: none;
-    --section-overlay: rgba(0, 0, 0, 0.4);
+    --section-overlay: transparent;
+  }
+
+  .section-home::before {
+    display: none;
   }
 
   /* Services Section - White background */
