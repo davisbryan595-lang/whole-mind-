@@ -53,7 +53,7 @@ export function Hero() {
       </video>
       <div className="absolute inset-0 bg-black/40 z-10" />
       <audio ref={audioRef} loop className="hidden">
-        <source src="https://orangefreesounds.com/wp-content/uploads/2016/12/Running-water-noise.mp3" type="audio/mpeg" />
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg" />
       </audio>
       <div className="absolute top-32 right-8 z-30">
         <button
