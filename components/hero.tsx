@@ -64,8 +64,8 @@ export function Hero() {
       </video>
       <div className="absolute inset-0 bg-black/40 z-10" />
       <audio ref={audioRef} loop preload="auto" crossOrigin="anonymous" muted>
-        <source src="https://orangefreesounds.com/wp-content/uploads/2021/11/Waterfall-Sound.mp3" type="audio/mpeg" />
         <source src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Water_fall.ogg" type="audio/ogg" />
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
       </audio>
       <div className="absolute top-32 right-8 z-30">
         <button
