@@ -40,14 +40,10 @@ const services = [
   },
   {
     icon: Heart,
-    title: "Faith-Based Counseling",
-    description: [
-      "An optional therapeutic approach for those interested in honoring their faith and spiritual identity.",
-      "Blends clinical care with your personal values and beliefs, if desired.",
-      "Provides space for healing rooted in compassion and purpose.",
-    ],
+    title: "Therapy",
+    description: ["We offer therapy services."],
     image: "https://images.unsplash.com/photo-1494809610410-160faaed4de0?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Hands joined in reflection during spiritually-integrated therapy",
+    imageAlt: "Clinician offering supportive counseling",
   },
   {
     icon: Users,
