@@ -127,15 +127,15 @@ export function Footer() {
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm opacity-90">
           <p>© {new Date().getFullYear()} WholeMind Behavioral Health & Wellness. All rights reserved.</p>
           <p className="mt-2">
-            <a href="#" className="hover:underline">
+            <a href="/privacy" className="hover:underline">
               Privacy Policy
             </a>
             {" • "}
-            <a href="#" className="hover:underline">
+            <a href="/terms" className="hover:underline">
               Terms of Service
             </a>
             {" • "}
-            <a href="#" className="hover:underline">
+            <a href="/privacy" className="hover:underline">
               HIPAA Notice
             </a>
           </p>
