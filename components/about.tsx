@@ -66,31 +66,6 @@ export function About() {
             </div>
           </ScrollReveal>
         </div>
-
-        {/* Core Values */}
-        <div className="pt-16 lg:pt-24 border-t border-gray-200">
-          <h3 className="about-section-heading text-center mb-16">Our Core Values</h3>
-          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
-            <div className="space-y-4">
-              <h4 className="about-value-heading text-center">Wholeness</h4>
-              <p className="about-body text-center">
-                Treating the mind, body, and soul as interconnected parts of a greater whole
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h4 className="about-value-heading text-center">Compassion</h4>
-              <p className="about-body text-center">
-                Providing care grounded in empathy, dignity, and respect
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h4 className="about-value-heading text-center">Evidence-Based</h4>
-              <p className="about-body text-center">
-                Integrating science, research, and clinical expertise with holistic healing
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )
