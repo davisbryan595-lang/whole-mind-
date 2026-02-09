@@ -10,7 +10,7 @@ const services = [
     title: "Holistic & Integrative Psychiatry",
     description: [
       "Comprehensive psychiatric evaluation and personalized treatment plans.",
-      "Integrates psychotherapy, medication, and holistic approaches.",
+      "Integrates medication and holistic approaches.",
       "Addresses emotional, physical, and spiritual well-being together.",
     ],
     image: "/whole.jpg",
