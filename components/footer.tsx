@@ -87,6 +87,28 @@ export function Footer() {
           </div>
 
           <div>
+            <h3 className="font-bold text-lg mb-4">Policies & Payments</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="/terms" className="hover:underline opacity-90 transition-opacity">
+                  Terms & Conditions
+                </a>
+              </li>
+              <li>
+                <a href="/privacy" className="hover:underline opacity-90 transition-opacity">
+                  Privacy Policy
+                </a>
+              </li>
+              <li className="pt-4">
+                <span className="font-semibold block mb-1 text-xs uppercase tracking-wider opacity-70">Accepted Payments</span>
+                <p className="opacity-80 leading-relaxed text-xs">
+                  Self-pay, Venmo, Apple Pay, Zelle, Credit & Debit Cards
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <h3 className="font-bold text-lg mb-4">Follow Us</h3>
             <div className="flex gap-4">
               <a href="#" aria-label="Facebook" className="opacity-90 hover:opacity-100 transition-opacity">
