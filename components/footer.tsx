@@ -2,9 +2,13 @@
 
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export function Footer() {
+  const pathname = usePathname()
   const scrollToSection = (id: string) => {
+    if (pathname !== "/") return
     const element = document.querySelector(id)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
@@ -26,36 +30,40 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <button
+                <Link
+                  href={pathname === "/" ? "#about" : "/#about"}
                   onClick={() => scrollToSection("#about")}
                   className="hover:underline opacity-90 hover:opacity-100 transition-opacity"
                 >
                   About Us
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  href={pathname === "/" ? "#services" : "/#services"}
                   onClick={() => scrollToSection("#services")}
                   className="hover:underline opacity-90 hover:opacity-100 transition-opacity"
                 >
                   Services
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  href={pathname === "/" ? "#providers" : "/#providers"}
                   onClick={() => scrollToSection("#providers")}
                   className="hover:underline opacity-90 hover:opacity-100 transition-opacity"
                 >
                   Our Providers
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  href={pathname === "/" ? "#faq" : "/#faq"}
                   onClick={() => scrollToSection("#faq")}
                   className="hover:underline opacity-90 hover:opacity-100 transition-opacity"
                 >
                   FAQ
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -127,17 +135,17 @@ export function Footer() {
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm opacity-90">
           <p>© {new Date().getFullYear()} WholeMind Behavioral Health & Wellness. All rights reserved.</p>
           <p className="mt-2">
-            <a href="/privacy" className="hover:underline">
+            <Link href="/privacy" className="hover:underline">
               Privacy Policy
-            </a>
+            </Link>
             {" • "}
-            <a href="/terms" className="hover:underline">
+            <Link href="/terms" className="hover:underline">
               Terms of Service
-            </a>
+            </Link>
             {" • "}
-            <a href="/privacy" className="hover:underline">
+            <Link href="/privacy" className="hover:underline">
               HIPAA Notice
-            </a>
+            </Link>
           </p>
         </div>
       </div>
