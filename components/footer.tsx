@@ -2,9 +2,13 @@
 
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export function Footer() {
+  const pathname = usePathname()
   const scrollToSection = (id: string) => {
+    if (pathname !== "/") return
     const element = document.querySelector(id)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
@@ -14,7 +18,7 @@ export function Footer() {
   return (
     <footer id="contact" className="bg-primary text-primary-foreground py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div className="space-y-4">
             <Image src="/logo.png" alt="WholeMind Behavioral Health Logo" width={140} height={140} className="mb-4 h-24 w-auto" />
             <p className="text-sm leading-relaxed opacity-90">
@@ -26,36 +30,40 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <button
+                <Link
+                  href={pathname === "/" ? "#about" : "/#about"}
                   onClick={() => scrollToSection("#about")}
                   className="hover:underline opacity-90 hover:opacity-100 transition-opacity"
                 >
                   About Us
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  href={pathname === "/" ? "#services" : "/#services"}
                   onClick={() => scrollToSection("#services")}
                   className="hover:underline opacity-90 hover:opacity-100 transition-opacity"
                 >
                   Services
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  href={pathname === "/" ? "#providers" : "/#providers"}
                   onClick={() => scrollToSection("#providers")}
                   className="hover:underline opacity-90 hover:opacity-100 transition-opacity"
                 >
                   Our Providers
-                </button>
+                </Link>
               </li>
               <li>
-                <button
+                <Link
+                  href={pathname === "/" ? "#faq" : "/#faq"}
                   onClick={() => scrollToSection("#faq")}
                   className="hover:underline opacity-90 hover:opacity-100 transition-opacity"
                 >
                   FAQ
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -87,6 +95,28 @@ export function Footer() {
           </div>
 
           <div>
+            <h3 className="font-bold text-lg mb-4">Policies & Payments</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="/terms" className="hover:underline opacity-90 transition-opacity">
+                  Terms & Conditions
+                </a>
+              </li>
+              <li>
+                <a href="/privacy" className="hover:underline opacity-90 transition-opacity">
+                  Privacy Policy
+                </a>
+              </li>
+              <li className="pt-4">
+                <span className="font-semibold block mb-1 text-xs uppercase tracking-wider opacity-70">Accepted Payments</span>
+                <p className="opacity-80 leading-relaxed text-xs">
+                  Self-pay, Venmo, Apple Pay, Zelle, Credit & Debit Cards
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <h3 className="font-bold text-lg mb-4">Follow Us</h3>
             <div className="flex gap-4">
               <a href="#" aria-label="Facebook" className="opacity-90 hover:opacity-100 transition-opacity">
@@ -105,17 +135,17 @@ export function Footer() {
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm opacity-90">
           <p>© {new Date().getFullYear()} WholeMind Behavioral Health & Wellness. All rights reserved.</p>
           <p className="mt-2">
-            <a href="#" className="hover:underline">
+            <Link href="/privacy" className="hover:underline">
               Privacy Policy
-            </a>
+            </Link>
             {" • "}
-            <a href="#" className="hover:underline">
+            <Link href="/terms" className="hover:underline">
               Terms of Service
-            </a>
+            </Link>
             {" • "}
-            <a href="#" className="hover:underline">
+            <Link href="/privacy" className="hover:underline">
               HIPAA Notice
-            </a>
+            </Link>
           </p>
         </div>
       </div>
