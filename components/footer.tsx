@@ -87,8 +87,8 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={18} className="flex-shrink-0" />
-                <a href="mailto:info@wholemindhealth.com" className="opacity-90 hover:opacity-100">
-                  info@wholemindhealth.com
+                <a href="mailto:info@wholemindbhw.com" className="opacity-90 hover:opacity-100">
+                  info@wholemindbhw.com
                 </a>
               </li>
             </ul>

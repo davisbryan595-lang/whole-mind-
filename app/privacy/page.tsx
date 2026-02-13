@@ -67,7 +67,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-2xl font-bold text-primary mb-4">Contact Us</h2>
               <p>
-                If you have any questions or concerns about our Privacy Policy or how your information is handled, please contact us at info@wholemindhealth.com.
+                If you have any questions or concerns about our Privacy Policy or how your information is handled, please contact us at info@wholemindbhw.com.
               </p>
             </section>
           </div>
