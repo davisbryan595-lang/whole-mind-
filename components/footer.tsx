@@ -68,31 +68,33 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="font-bold text-lg mb-4">Contact</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <MapPin size={18} className="mt-0.5 flex-shrink-0" />
-                <span className="opacity-90">
-                  123 Wellness Way
-                  <br />
-                  Tampa, FL 33602
-                </span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone size={18} className="flex-shrink-0" />
-                <a href="tel:+18135551234" className="opacity-90 hover:opacity-100">
-                  (813) 555-1234
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail size={18} className="flex-shrink-0" />
-                <a href="mailto:info@wholemindbhw.com" className="opacity-90 hover:opacity-100">
-                  info@wholemindbhw.com
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div>
+          <h3 className="font-bold text-lg mb-4">Contact</h3>
+          <ul className="space-y-3 text-sm">
+            <li className="flex items-start gap-2">
+              <MapPin size={18} className="mt-0.5 flex-shrink-0" />
+              <span className="opacity-90">
+                Virtual Services Available
+                <br />
+                Serving Clients Online
+              </span>
+            </li>
+
+            <li className="flex items-center gap-2">
+              <Phone size={18} className="flex-shrink-0" />
+              <a href="tel:+18135551234" className="opacity-90 hover:opacity-100">
+                (813) 555-1234
+              </a>
+            </li>
+
+            <li className="flex items-center gap-2">
+              <Mail size={18} className="flex-shrink-0" />
+              <a href="mailto:info@wholemindbhw.com" className="opacity-90 hover:opacity-100">
+                info@wholemindbhw.com
+              </a>
+            </li>
+          </ul>
+        </div>
 
           <div>
             <h3 className="font-bold text-lg mb-4">Policies & Payments</h3>
