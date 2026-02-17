@@ -65,18 +65,17 @@ export function ReferralForm() {
             </CardHeader>
 
             <CardContent>
-              {/* FORM SUBMITS DIRECTLY TO estellayem@gmail.com */}
+              {/* FORM SUBMITS DIRECTLY TO Web3Forms */}
               <form
-                action="https://formsubmit.co/estellayem@gmail.com"
+                action="https://api.web3forms.com/submit"
                 method="POST"
                 className="space-y-6 text-white"
               >
-                {/* FormSubmit Hidden Configs */}
-                <input type="hidden" name="_subject" value="New Appointment Request - WholeMind" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_autoresponse" value="Thank you for your appointment request! We’ve received it and will contact you within 24 hours to confirm your session." />
-                <input type="hidden" name="_next" value={`${typeof window !== "undefined" ? window.location.origin : ""}/thank-you`} />
+                {/* Web3Forms Hidden Configs */}
+                <input type="hidden" name="access_key" value="eb6a5870-6178-40d4-9d8c-bcefc0e2070f" />
+                <input type="hidden" name="subject" value="New Appointment Request - WholeMind" />
+                <input type="hidden" name="from_name" value="WholeMind Appointment Form" />
+                <input type="hidden" name="redirect" value="https://web3forms.com/success" />
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
