@@ -110,7 +110,7 @@ export function ReferralForm() {
               {/* FORM SUBMITS VIA Web3Forms API */}
               <form onSubmit={handleSubmit} className="space-y-6 text-white">
                 {/* Web3Forms Hidden Configs */}
-                <input type="hidden" name="access_key" value="eb6a5870-6178-40d4-9d8c-bcefc0e2070f" />
+                <input type="hidden" name="access_key" value="42579095-8aef-4b0b-b64f-806a2de015f0" />
                 <input type="hidden" name="subject" value="New Appointment Request - WholeMind" />
                 <input type="hidden" name="from_name" value="WholeMind Appointment Form" />
 
