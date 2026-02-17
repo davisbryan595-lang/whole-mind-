@@ -14,6 +14,7 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function ReferralForm() {
   const [consent, setConsent] = useState(false)
+  const [selectedService, setSelectedService] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const { toast } = useToast()
 
@@ -186,14 +187,22 @@ export function ReferralForm() {
                     id="service"
                     name="service"
                     required
+                    value={selectedService}
+                    onChange={(e) => setSelectedService(e.target.value)}
                     className="w-full px-3 py-2 border border-input rounded-md bg-black/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
                   >
-                    <option value="">Select a Service</option>
-                    <option value="therapy">Individual Therapy</option>
-                    <option value="couples">Couples Counseling</option>
-                    <option value="family">Family Therapy</option>
-                    <option value="assessment">Psychological Assessment</option>
+                    <option value="" className="bg-slate-900 text-white">Select a Service</option>
+                    <option value="therapy" className="bg-slate-900 text-white">Individual Therapy</option>
+                    <option value="couples" className="bg-slate-900 text-white">Couples Counseling</option>
+                    <option value="family" className="bg-slate-900 text-white">Family Therapy</option>
+                    <option value="assessment" className="bg-slate-900 text-white">Psychological Assessment</option>
+                    <option value="other" className="bg-slate-900 text-white">Other</option>
                   </select>
+                  {selectedService === "other" && (
+                    <p className="text-sm text-primary-foreground/80 italic animate-in fade-in slide-in-from-top-1 duration-300">
+                      Please clarify your request in the "Additional Notes" field below.
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
