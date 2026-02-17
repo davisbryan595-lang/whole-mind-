@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "WholeMind Behavioral Health & Wellness",
   description: "Healing the Mind • Nourishing the Soul • Restoring Wholeness",
   generator: "the linkage digital",
+  icons: {
+    icon: "/logo.png",
+  },
 }
 
 export default function RootLayout({
