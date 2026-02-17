@@ -3,6 +3,7 @@
 import type React from "react"
 import Image from "next/image"
 import { useState } from "react"
+import { useToast } from "@/hooks/use-toast"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -13,6 +14,47 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function ReferralForm() {
   const [consent, setConsent] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { toast } = useToast()
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    const formData = new FormData(e.currentTarget)
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        toast({
+          title: "Appointment Requested",
+          description: "Thank you! We have received your request and will contact you within 24 hours.",
+        })
+        setConsent(false)
+        ;(e.target as HTMLFormElement).reset()
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Error",
+          description: data.message || "Something went wrong. Please try again later.",
+        })
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to send request. Please check your connection.",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <section id="appointment" className="section-cover section-referral py-24">
@@ -65,17 +107,12 @@ export function ReferralForm() {
             </CardHeader>
 
             <CardContent>
-              {/* FORM SUBMITS DIRECTLY TO Web3Forms */}
-              <form
-                action="https://api.web3forms.com/submit"
-                method="POST"
-                className="space-y-6 text-white"
-              >
+              {/* FORM SUBMITS VIA Web3Forms API */}
+              <form onSubmit={handleSubmit} className="space-y-6 text-white">
                 {/* Web3Forms Hidden Configs */}
                 <input type="hidden" name="access_key" value="eb6a5870-6178-40d4-9d8c-bcefc0e2070f" />
                 <input type="hidden" name="subject" value="New Appointment Request - WholeMind" />
                 <input type="hidden" name="from_name" value="WholeMind Appointment Form" />
-                <input type="hidden" name="redirect" value="https://web3forms.com/success" />
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
@@ -173,6 +210,8 @@ export function ReferralForm() {
                 <div className="flex items-start gap-3">
                   <Checkbox
                     id="consent"
+                    name="consent"
+                    value="yes"
                     checked={consent}
                     onCheckedChange={(checked) => setConsent(checked as boolean)}
                     required
@@ -187,9 +226,9 @@ export function ReferralForm() {
                 <Button
                   type="submit"
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition"
-                  disabled={!consent}
+                  disabled={!consent || isSubmitting}
                 >
-                  Book Appointment
+                  {isSubmitting ? "Sending..." : "Book Appointment"}
                 </Button>
               </form>
             </CardContent>
